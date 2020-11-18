@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element label="Cisco Security Advisories Bulletins" max_length="40" name="x_545898_cisco_bcs_cisco_security_advisories_bulletins" sizeclass="800" type="collection">
+        <element label="Published" max_length="255" name="bulletin_first_published" type="glide_date_time"/>
+        <element label="Last Updated" max_length="255" name="bulletin_last_updated" type="glide_date_time"/>
+        <element label="Bulletin Mapping Caveat" max_length="2500" name="bulletin_mapping_caveat" type="string"/>
+        <element label="Bulletin Summary" max_length="10000" name="bulletin_summary" type="string"/>
+        <element label="Advisory title" max_length="1000" name="bulletin_title" type="string"/>
+        <element label="URL" max_length="2000" name="bulletin_url" type="url"/>
+        <element label="Version" max_length="255" name="bulletin_version" type="string"/>
+        <element label="Cisco Bug IDs" max_length="255" name="cisco_bug_ids" type="string"/>
+        <element label="CVE ID" max_length="500" name="cve_id" type="string"/>
+        <element label="CVSS Base" max_length="1000" name="cvss_base" type="string"/>
+        <element label="CVSS Temporal" max_length="1000" name="cvss_temporal" type="string"/>
+        <element calculation="(function calculatedFieldValue(current) {&#13;&#10;&#13;&#10;&#9;var count = 0;&#13;&#10;&#9;var getData = new Cisco_DAOScript();&#13;&#10;&#9;count = getData.getDataOfCalculatedFields(&quot;securityAdvisories&quot;,current,&quot;Potentially Vulnerable&quot;,&quot;psirt_cold_id&quot;);&#13;&#10;&#9;return count;&#13;&#10;&#13;&#10;})(current);" label="Potentially Vulnerable Devices" max_length="40" name="potentially_vulnerable_devices_count" type="integer" virtual="true"/>
+        <element label="Psirt Advisory ID" max_length="500" name="psirt_advisory_id" type="string"/>
+        <element display="true" label="Advisory ID" max_length="255" name="psirt_cold_id" type="string"/>
+        <element label="Severity" max_length="500" name="sir" type="string"/>
+        <element calculation="(function calculatedFieldValue(current) {&#13;&#10;&#13;&#10;&#9;var count = 0;&#13;&#10;&#9;var getData = new Cisco_DAOScript();&#13;&#10;&#9;count = getData.getDataOfCalculatedFields(&quot;securityAdvisories&quot;,current,&quot;Vulnerable&quot;,&quot;psirt_cold_id&quot;);&#13;&#10;&#9;return count;&#13;&#10;&#13;&#10;})(current);" label="Vulnerable Devices" max_length="40" name="vulnerable_devices_count" type="integer" virtual="true"/>
+    </element>
+</database>

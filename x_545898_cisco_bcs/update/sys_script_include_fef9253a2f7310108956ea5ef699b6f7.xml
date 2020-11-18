@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>package_private</access>
+        <active>true</active>
+        <api_name>x_545898_cisco_bcs.Cisco_AppUtil</api_name>
+        <caller_access/>
+        <client_callable>false</client_callable>
+        <description/>
+        <name>Cisco_AppUtil</name>
+        <script><![CDATA[var Cisco_AppUtil = Class.create();
+Cisco_AppUtil.prototype = {
+    initialize: function() {
+        this.logger = new Cisco_BCS_SNLogger();
+        this.configuration = {
+            "api": {
+                "hardwareLifecycle": "/product-alerts/hw-eox",
+                "softwareLifecycle": "/product-alerts/sw-eox",
+                "securityAdvisories": "/product-alerts/psirt",
+                "fieldNotices": "/product-alerts/field-notices",
+				"assets":"/inventory/assets",
+				"devices":"/inventory/devices",
+				"fieldNoticesBullitens" : "/product-alerts/fn-bulletins",
+				"securityAdvisioriesBulletins" : "/product-alerts/psirt-bulletins",
+				"hardwareLifecycleBulletins" : "/product-alerts/hw-eox-bulletins",
+				"softwareLifecycleBulletins": "/product-alerts/sw-eox-bulletins",
+				"cbpDetails": "/cbp/details",
+				"cbpRules": "/cbp/rules",
+				"cbpSummary": "/cbp/summary",
+				"contractLifecycle" : "/contract/serials"
+            },
+            "property": {
+                "apiPrefix": gs.getProperty('x_545898_cisco_bcs.api.prefix') + '',
+				"authSysId" : gs.getProperty('x_545898_cisco_bcs.Authentication.Record'),
+            }
+        };
+    },
+    makeApiCall: function(method, endpoint, body, bcsAccount) {
+        try {
+            this.logger.debug("Inside Cisco_AppUtil.makeApiCall() performing API call to endpoint " + endpoint);
+            var host = bcsAccount.host_name + '';
+            var customerId = bcsAccount.customer_id + '';
+            var apiKey = bcsAccount.api_key + '';
+            var prefix = this.configuration.property.apiPrefix + '';
+            var url = "https://" + host + "/" + prefix + "/" + customerId + endpoint;
+
+            var request = new sn_ws.RESTMessageV2();
+            request.setEndpoint(url);
+            request.setHttpMethod(method);
+            request.setRequestHeader("x-api-key", apiKey);
+            var response = request.execute();
+            return response;
+        } catch (e) {
+            this.logger.error("Exception caught inside Cisco_AppUtil.makeApiCall() while making API call to " + endpoint + ". Error :- " + e);
+        }
+    },
+    parse: function(str) {
+        if (str)
+            return JSON.parse(str);
+        return '';
+    },
+    stringify: function(str) {
+        if (str)
+            return JSON.stringify(str);
+        return '';
+    },
+    type: 'Cisco_AppUtil'
+};]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2020-10-15 13:51:40</sys_created_on>
+        <sys_id>fef9253a2f7310108956ea5ef699b6f7</sys_id>
+        <sys_mod_count>14</sys_mod_count>
+        <sys_name>Cisco_AppUtil</sys_name>
+        <sys_package display_value="Cisco BCS Operational Insights" source="x_545898_cisco_bcs">56b8d9362f3310108956ea5ef699b62d</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="Cisco BCS Operational Insights">56b8d9362f3310108956ea5ef699b62d</sys_scope>
+        <sys_update_name>sys_script_include_fef9253a2f7310108956ea5ef699b6f7</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2020-11-09 09:40:33</sys_updated_on>
+    </sys_script_include>
+</record_update>

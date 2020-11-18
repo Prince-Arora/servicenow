@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element label="Cisco HW EOX Bulletins" max_length="40" name="x_545898_cisco_bcs_cisco_hw_eox_bulletins" sizeclass="13127" type="collection">
+        <element label="Bulletin Number" max_length="255" name="bulletin_number" type="string"/>
+        <element label="Bulletin Title" max_length="2000" name="bulletin_title" type="string"/>
+        <element label="Bulletin URL" max_length="2500" name="bulletin_url" type="url"/>
+        <element calculation="(function calculatedFieldValue(current) {&#13;&#10;&#13;&#10;&#9;var count = 0;&#13;&#10;&#9;var sw_eox = new GlideRecord(&quot;x_545898_cisco_bcs_cisco_hardware_lifecycle&quot;);&#13;&#10;&#9;sw_eox.addQuery(&quot;hw_id&quot;,current.hw_eox_id);&#13;&#10;&#9;sw_eox.query();&#13;&#10;&#9;while(sw_eox.next()) &#13;&#10;&#9;&#9;count = count + 1;&#13;&#10;&#9;return count;&#13;&#10;&#13;&#10;})(current);" label="Devices" max_length="40" name="devices" type="integer" virtual="true"/>
+        <element label="Eolife Announcement Date" max_length="255" name="eolife_announcement_date" type="glide_date_time"/>
+        <element label="EoNew Service Attach Date" max_length="255" name="eonew_service_attach_date" type="glide_date_time"/>
+        <element label="EoRoutine Failure Analysis Date" max_length="255" name="eoroutine_failure_analysis_date" type="glide_date_time"/>
+        <element label="EoSale Date" max_length="255" name="eosale_date" type="glide_date_time"/>
+        <element label="EoSecurity Vul Support Date" max_length="255" name="eosecurity_vul_support_date" type="glide_date_time"/>
+        <element label="EoSoftware Contract Renewal Date" max_length="255" name="eosoftware_contract_renewal_date" type="glide_date_time"/>
+        <element label="EOSW Maintenance Releases Date" max_length="255" name="eosw_maintenance_releases_date" type="glide_date_time"/>
+        <element display="true" label="HW EOX ID" max_length="255" name="hw_eox_id" type="string"/>
+        <element label="Last Date of Support" max_length="255" name="last_date_of_support" type="glide_date_time"/>
+        <element label="Last Ship Date" max_length="255" name="last_ship_date" type="glide_date_time"/>
+        <element label="Product ID" max_length="500" name="product_id" type="string"/>
+    </element>
+</database>

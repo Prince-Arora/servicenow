@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element label="Cisco BCS Feedback Form" max_length="40" name="x_545898_cisco_bcs_cisco_bcs_feedback_form" sizeclass="47" type="collection">
+        <element label="Asset Comments" max_length="2000" name="asset_comments" read_only="true" type="string"/>
+        <element choice="1" label="Asset Rating" max_length="255" name="asset_rating" read_only="true" type="choice">
+            <choice>
+                <element inactive_on_update="false" label="Extremely Satisfied" sequence="1" value="5"/>
+                <element inactive_on_update="false" label="Moderately Satisfied" sequence="2" value="4"/>
+                <element inactive_on_update="false" label="Neither Satisfied nor Dissatisfied" sequence="3" value="3"/>
+                <element inactive_on_update="false" label="Slightly Dissatisfied" sequence="4" value="2"/>
+                <element inactive_on_update="false" label="Extremely Dissatisfied" sequence="5" value="1"/>
+            </choice>
+        </element>
+        <element label="Configuration Comments" max_length="2000" name="configuration_comments" read_only="true" type="string"/>
+        <element choice="1" label="Configuration Rating" max_length="255" name="configuration_rating" read_only="true" type="choice">
+            <choice>
+                <element inactive_on_update="false" label="Extremely Satisfied" sequence="1" value="5"/>
+                <element inactive_on_update="false" label="Moderately Satisfied" sequence="2" value="4"/>
+                <element inactive_on_update="false" label="Neither Satisfied nor Dissatisfied" sequence="3" value="3"/>
+                <element inactive_on_update="false" label="Slightly Dissatisfied" sequence="4" value="2"/>
+                <element inactive_on_update="false" label="Extremely Dissatisfied" sequence="5" value="1"/>
+            </choice>
+        </element>
+        <element label="Hardware Lifecycle Comments" max_length="2000" name="hardware_lifecycle_comments" read_only="true" type="string"/>
+        <element choice="1" label="Hardware Lifecycle Rating" max_length="255" name="hardware_lifecycle_rating" read_only="true" type="choice">
+            <choice>
+                <element inactive_on_update="false" label="Extremely Satisfied" sequence="1" value="5"/>
+                <element inactive_on_update="false" label="Moderately Satisfied" sequence="2" value="4"/>
+                <element inactive_on_update="false" label="Neither Satisfied nor Dissatisfied" sequence="3" value="3"/>
+                <element inactive_on_update="false" label="Slightly Dissatisfied" sequence="4" value="2"/>
+                <element inactive_on_update="false" label="Extremely Dissatisfied" sequence="5" value="1"/>
+            </choice>
+        </element>
+        <element label="Individual Asset Comments" max_length="2000" name="individual_asset_comments" read_only="true" type="string"/>
+        <element choice="1" label="Individual Asset Rating" max_length="255" name="individual_asset_rating" read_only="true" type="choice">
+            <choice>
+                <element inactive_on_update="false" label="Extremely Satisfied" sequence="1" value="5"/>
+                <element inactive_on_update="false" label="Moderately Satisfied" sequence="2" value="4"/>
+                <element inactive_on_update="false" label="Neither Satisfied nor Dissatisfied" sequence="3" value="3"/>
+                <element inactive_on_update="false" label="Slightly Dissatisfied" sequence="4" value="2"/>
+                <element inactive_on_update="false" label="Extremely Dissatisfied" sequence="5" value="1"/>
+            </choice>
+        </element>
+        <element label="Overall Feedback" max_length="10000" name="overall_feedback" read_only="true" type="string"/>
+        <element label="Software Lifecycle Comments" max_length="2000" name="software_lifecycle_comments" read_only="true" type="string"/>
+        <element choice="1" label="Software Lifecycle Rating" max_length="255" name="software_lifecycle_rating" read_only="true" type="choice">
+            <choice>
+                <element inactive_on_update="false" label="Extremely Satisfied" sequence="1" value="5"/>
+                <element inactive_on_update="false" label="Moderately Satisfied" sequence="2" value="4"/>
+                <element inactive_on_update="false" label="Neither Satisfied nor Dissatisfied" sequence="3" value="3"/>
+                <element inactive_on_update="false" label="Slightly Dissatisfied" sequence="4" value="2"/>
+                <element inactive_on_update="false" label="Extremely Dissatisfied" sequence="5" value="1"/>
+            </choice>
+        </element>
+        <element label="Username" max_length="255" name="username" read_only="true" type="string"/>
+        <element label="Vulnerabilities Comments" max_length="2000" name="vulnerabilities_comments" read_only="true" type="string"/>
+        <element choice="1" label="Vulnerabilities Rating" max_length="255" name="vulnerabilities_rating" read_only="true" type="choice">
+            <choice>
+                <element inactive_on_update="false" label="Extremely Satisfied" sequence="1" value="5"/>
+                <element inactive_on_update="false" label="Moderately Satisfied" sequence="2" value="4"/>
+                <element inactive_on_update="false" label="Neither Satisfied nor Dissatisfied" sequence="3" value="3"/>
+                <element inactive_on_update="false" label="Slightly Dissatisfied" sequence="4" value="2"/>
+                <element inactive_on_update="false" label="Extremely Dissatisfied" sequence="5" value="1"/>
+            </choice>
+        </element>
+    </element>
+</database>

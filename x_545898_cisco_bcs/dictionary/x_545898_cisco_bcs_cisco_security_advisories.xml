@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element label="Cisco Security Advisories" max_length="40" name="x_545898_cisco_bcs_cisco_security_advisories" sizeclass="21990" type="collection">
+        <element label="Security Advisory Device ID" max_length="32" name="deviceid_ref" reference="x_545898_cisco_bcs_cisco_devices" type="reference"/>
+        <element label="Device ID" max_length="255" name="device_id" type="string"/>
+        <element label="Match Confidence" max_length="500" name="match_confidence" type="string"/>
+        <element label="Match Confidence Reason" max_length="2000" name="match_confidence_reason" type="string"/>
+        <element display="true" label="Psirt Cold ID" max_length="255" name="psirt_cold_id" type="string"/>
+        <element label="Psirt Cold Bulletin ID" max_length="32" name="psirt_cold_id_ref" reference="x_545898_cisco_bcs_cisco_security_advisories_bulletins" type="reference"/>
+        <index name="index">
+            <element name="deviceid_ref"/>
+        </index>
+        <index name="index2">
+            <element name="psirt_cold_id_ref"/>
+        </index>
+    </element>
+</database>

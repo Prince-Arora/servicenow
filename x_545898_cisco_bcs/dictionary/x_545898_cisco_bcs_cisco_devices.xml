@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element extends="cmdb_ci_computer" label="Cisco Devices" max_length="40" name="x_545898_cisco_bcs_cisco_devices" sizeclass="303" type="collection">
+        <element label="Collector" max_length="255" name="collector" type="string"/>
+        <element label="Configuration Guidelines" max_length="40" name="configuration_guidelines" type="integer"/>
+        <element label="Config Register" max_length="255" name="config_register" type="string"/>
+        <element label="Config Status" max_length="255" name="config_status" type="string"/>
+        <element label="Config Time" max_length="255" name="config_time" type="glide_date_time"/>
+        <element label="Create Date" max_length="255" name="create_date" type="glide_date_time"/>
+        <element display="true" label="Device ID" max_length="255" name="device_id" type="string"/>
+        <element label="Device IP" max_length="255" name="device_ip" type="string"/>
+        <element label="Device Status" max_length="255" name="device_status" type="string"/>
+        <element label="Device Sys Name" max_length="255" name="device_sys_name" type="string"/>
+        <element label="Device Type" max_length="500" name="device_type" type="string"/>
+        <element label="Device URL" max_length="1000" name="device_url" type="url"/>
+        <element label="Feature Set Description" max_length="1000" name="feature_set_description" type="string"/>
+        <element label="Image Name" max_length="500" name="image_name" type="string"/>
+        <element label="Inseed File" max_length="255" name="inseed_file" type="string"/>
+        <element label="Inventory Status" max_length="255" name="inventory_status" type="string"/>
+        <element label="Inventory Time" max_length="255" name="inventory_time" type="glide_date_time"/>
+        <element label="Last Reset" max_length="500" name="last_reset" type="string"/>
+        <element calculation="(function calculatedFieldValue(current) {&#13;&#10;&#13;&#10;&#9;var calculatedData = new Cisco_DAOScript();&#13;&#10;&#9;var count = calculatedData.getDataOfCalculatedFields(&quot;fieldNotices&quot;,current,&quot;Potentially Vulnerable&quot;,&quot;device_id&quot;);&#13;&#10;&#9;return count;  &#13;&#10;&#13;&#10;})(current);" label="Potentially Vulnerable Field Notices" max_length="40" name="potentially_vulnerable_field_notices" type="integer" virtual="true"/>
+        <element calculation="(function calculatedFieldValue(current) {&#13;&#10;&#13;&#10;&#9;var calculatedData = new Cisco_DAOScript();&#13;&#10;&#9;var count = calculatedData.getDataOfCalculatedFields(&quot;securityAdvisories&quot;,current,&quot;Potentially Vulnerable&quot;,&quot;device_id&quot;);&#13;&#10;&#9;return count; &#13;&#10;&#13;&#10;})(current);" label="Potentially Vulnerable Security Advisories" max_length="40" name="potentially_vulnerable_security_advisories" type="integer" virtual="true"/>
+        <element label="Product Family" max_length="500" name="product_family" type="string"/>
+        <element label="Product ID" max_length="255" name="product_id" type="string"/>
+        <element label="Reset Reason" max_length="255" name="reset_reason" type="string"/>
+        <element label="SW Type" max_length="255" name="sw_type" type="string"/>
+        <element label="SW Version" max_length="255" name="sw_version" type="string"/>
+        <element attributes="synchronizePartitions=true" label="Sys Contact" max_length="500" name="sys_contact" type="string"/>
+        <element attributes="synchronizePartitions=true" label="Sys Location" max_length="500" name="sys_location" type="string"/>
+        <element label="User  Field 1" max_length="500" name="user_field_1" type="string"/>
+        <element label="User  Field 2" max_length="500" name="user_field_2" type="string"/>
+        <element label="User  Field 3" max_length="500" name="user_field_3" type="string"/>
+        <element label="User  Field 4" max_length="500" name="user_field_4" type="string"/>
+        <element calculation="(function calculatedFieldValue(current) {&#13;&#10;&#9;&#13;&#10;var calculatedData = new Cisco_DAOScript();&#13;&#10;&#9;var count = calculatedData.getDataOfCalculatedFields(&quot;fieldNotices&quot;,current,&quot;Vulnerable&quot;,&quot;device_id&quot;);&#13;&#10;&#9;return count; &#13;&#10;&#13;&#10;})(current);" label="Vulnerable Field Notices" max_length="40" name="vulnerable_field_notices" type="integer" virtual="true"/>
+        <element calculation="(function calculatedFieldValue(current) {&#13;&#10;&#13;&#10;&#9;var calculatedData = new Cisco_DAOScript();&#13;&#10;&#9;var count = calculatedData.getDataOfCalculatedFields(&quot;securityAdvisories&quot;,current,&quot;Vulnerable&quot;,&quot;device_id&quot;);&#13;&#10;&#9;return count; &#13;&#10;&#13;&#10;})(current);" label="Vulnerable Security Advisories" max_length="40" name="vulnerable_security_advisories" type="integer" virtual="true"/>
+    </element>
+</database>

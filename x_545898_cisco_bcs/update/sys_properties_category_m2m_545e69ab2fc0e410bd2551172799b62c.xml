@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_properties_category_m2m">
+    <sys_properties_category_m2m action="INSERT_OR_UPDATE">
+        <category display_value="Log Level">1b2ee5ab2fc0e410bd2551172799b6c5</category>
+        <order>1</order>
+        <property display_value="x_545898_cisco_bcs.bcs_log_verbosity" name="x_545898_cisco_bcs.bcs_log_verbosity">9dc56d762f7310108956ea5ef699b600</property>
+        <sys_class_name>sys_properties_category_m2m</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2020-10-30 08:21:29</sys_created_on>
+        <sys_id>545e69ab2fc0e410bd2551172799b62c</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>x_545898_cisco_bcs.bcs_log_verbosity.Log Level</sys_name>
+        <sys_package display_value="Cisco BCS Operational Insights" source="x_545898_cisco_bcs">56b8d9362f3310108956ea5ef699b62d</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Cisco BCS Operational Insights">56b8d9362f3310108956ea5ef699b62d</sys_scope>
+        <sys_update_name>sys_properties_category_m2m_545e69ab2fc0e410bd2551172799b62c</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2020-10-30 08:21:29</sys_updated_on>
+    </sys_properties_category_m2m>
+</record_update>

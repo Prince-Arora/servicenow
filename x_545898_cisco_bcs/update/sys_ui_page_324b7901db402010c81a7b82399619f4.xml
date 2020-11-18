@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_ui_page">
+    <sys_ui_page action="INSERT_OR_UPDATE">
+        <category>general</category>
+        <client_script/>
+        <description/>
+        <direct>false</direct>
+        <endpoint>x_545898_cisco_bcs_Cisco_BCS_Support_And_Contact.do</endpoint>
+        <html><![CDATA[<?xml version="1.0" encoding="utf-8" ?>
+<j:jelly trim="false" xmlns:j="jelly:core" xmlns:g="glide" xmlns:j2="null" xmlns:g2="null">
+	<style>
+		.support{
+		position: relative;
+		left: 5%;
+		}
+		.ciscoLogo{
+		width: 150px;
+		height: 80px;
+		margin-top : 15px;
+		margin-bottom : 15px;
+
+		}
+		.heading{
+		margin-top : 15px;
+		font-weight: bolder;
+		font-size: 2.5em;
+		color: #4d4c4c;
+		margin-left: 30%;
+		margin-top: 5%;
+		}
+		.document_link{
+		font-size: 1.5em;
+		}
+		h3{
+		color: #4d4c4c
+		}
+		p{
+		font-size: 1.5em;
+		}
+		.phNumber{
+		font-weight: bolder;
+		}
+		
+	</style>
+	<div class="support">
+		<h2 class="heading">
+				How can we help?
+			</h2>
+		
+		<div>
+			
+			<hr/>
+			<div>
+				<div class="col-md-6">
+					<div>
+			<img src="Cisco_logo.png" alt="Cisco Logo" class="ciscoLogo"/>
+		</div>
+					<h3> Documentation Link </h3>
+					<a class="document_link" href="https://docs.servicenow.com/" target="_blank">User Guide</a>
+
+				</div>
+				<div class="col-md-6">
+					<h3> CONTACT TAC BY PHONE </h3>
+					<p>Enterprise and Service Provider Products</p>		
+					<p><span class="phNumber">1-800-553-2447</span> &#xA0; US and Canada</p>
+					<h3> CONTACT BY EMAIL </h3>
+					<p><b>help@cisco.com</b></p>
+				</div>
+			</div>
+		</div>
+	</div>
+
+</j:jelly>]]></html>
+        <name>Cisco_BCS_Support_And_Contact</name>
+        <processing_script/>
+        <sys_class_name>sys_ui_page</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2020-10-22 14:54:28</sys_created_on>
+        <sys_id>324b7901db402010c81a7b82399619f4</sys_id>
+        <sys_mod_count>11</sys_mod_count>
+        <sys_name>Cisco_BCS_Support_And_Contact</sys_name>
+        <sys_package display_value="Cisco BCS Operational Insights" source="x_545898_cisco_bcs">56b8d9362f3310108956ea5ef699b62d</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Cisco BCS Operational Insights">56b8d9362f3310108956ea5ef699b62d</sys_scope>
+        <sys_update_name>sys_ui_page_324b7901db402010c81a7b82399619f4</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2020-11-10 11:43:45</sys_updated_on>
+    </sys_ui_page>
+</record_update>

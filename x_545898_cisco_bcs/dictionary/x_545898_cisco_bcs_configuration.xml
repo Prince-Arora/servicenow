@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element label="Configuration" max_length="40" name="x_545898_cisco_bcs_configuration" sizeclass="2" type="collection">
+        <element label="API Key" mandatory="true" max_length="255" name="api_key" type="string"/>
+        <element label="Customer ID" mandatory="true" max_length="255" name="customer_id" type="string"/>
+        <element label="Host Name" mandatory="true" max_length="255" name="host_name" type="string"/>
+        <element choice="3" default="0" label="Log Level" max_length="255" name="log_level" type="choice">
+            <choice>
+                <element inactive_on_update="false" label="Error" sequence="0" value="0"/>
+                <element inactive_on_update="false" label="Warning" sequence="1" value="1"/>
+                <element inactive_on_update="false" label="Info" sequence="2" value="2"/>
+                <element inactive_on_update="false" label="Debug" sequence="3" value="3"/>
+            </choice>
+        </element>
+        <element label="Name" mandatory="true" max_length="255" name="name" type="string"/>
+    </element>
+</database>

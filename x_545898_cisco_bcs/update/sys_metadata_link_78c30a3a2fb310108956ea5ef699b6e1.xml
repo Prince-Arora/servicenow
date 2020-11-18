@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_metadata_link">
+    <sys_metadata_link action="INSERT_OR_UPDATE">
+        <directory>update</directory>
+        <documentkey>02b2c23a2fb310108956ea5ef699b60c</documentkey>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="x_545898_cisco_bcs_configuration">
+    <x_545898_cisco_bcs_configuration action="INSERT_OR_UPDATE">
+        <api_key/>
+        <host_name/>
+        <password/>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2020-10-15 15:39:33</sys_created_on>
+        <sys_id>02b2c23a2fb310108956ea5ef699b60c</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2020-10-15 15:39:33</sys_updated_on>
+        <user_type/>
+        <username/>
+    </x_545898_cisco_bcs_configuration>
+</record_update>
+]]></payload>
+        <sys_class_name>sys_metadata_link</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2020-10-15 15:44:02</sys_created_on>
+        <sys_id>78c30a3a2fb310108956ea5ef699b6e1</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Created 2020-10-15 08:39:33</sys_name>
+        <sys_package display_value="Cisco BCS Operational Insights" source="x_545898_cisco_bcs">56b8d9362f3310108956ea5ef699b62d</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Cisco BCS Operational Insights">56b8d9362f3310108956ea5ef699b62d</sys_scope>
+        <sys_update_name>sys_metadata_link_78c30a3a2fb310108956ea5ef699b6e1</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2020-10-15 15:44:02</sys_updated_on>
+        <tablename>x_545898_cisco_bcs_configuration</tablename>
+    </sys_metadata_link>
+</record_update>

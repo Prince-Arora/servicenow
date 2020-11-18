@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_ui_page">
+    <sys_ui_page action="INSERT_OR_UPDATE">
+        <category>general</category>
+        <client_script><![CDATA[$j = jQuery.noConflict();
+
+$j('#myframe').load(function() {
+    $j("#myframe").contents().find("a").attr("target", "_parent");
+});
+
+getAssetInfo();
+
+function getAssetInfo() {
+
+    var bridgeAjax = new GlideAjax("Cisco_ClientServerBridge");
+    bridgeAjax.addParam('sysparm_name', "getAssetDrilldownInfo");
+    bridgeAjax.getXML(getAssetDrilldownInfoResponse);
+}
+
+function getAssetDrilldownInfoResponse(response) {
+    var answer = response.responseXML.documentElement.getAttribute("answer");
+    var result = JSON.parse(answer);
+
+    var title = ["Physical Type", "Serial Number Status", "Platform Diversification (Top 15)"];
+
+    for (var j = 0; j < result.length; j++) {
+
+        var xAxis = {};
+        var categories = [];
+        var data_array = [];
+		var series_data = [];
+
+        for (var i in result[j]) {
+            data_array.push({
+                name: i + ' [' + result[j][i] + ']',
+                y: parseInt(result[j][i])
+            });
+			series_data.push(parseInt(result[j][i]));
+            categories.push(i);
+        }
+
+		alert(JSON.stringify(data_array));
+        xAxis.categories = categories;
+
+        if (j != 2)
+			x_545898_cisco_bcs.Cisco_RenderGraph.renderPieChart("report"+j, title[j], data_array, "pie", xAxis);
+        else {
+            var series_obj = [{"data": series_data, "showInLegend": false}];
+            x_545898_cisco_bcs.Cisco_RenderGraph.renderBarChart("report"+j, title[j], series_obj, "column", xAxis, "Count");
+        }
+    }
+}]]></client_script>
+        <description/>
+        <direct>false</direct>
+        <endpoint>x_545898_cisco_bcs_Asset_Drilldown.do</endpoint>
+        <html><![CDATA[<?xml version="1.0" encoding="utf-8" ?>
+<j:jelly trim="false" xmlns:j="jelly:core" xmlns:g="glide" xmlns:j2="null" xmlns:g2="null">
+<g:inline template="reporting_includes.xml" />	
+	<body>
+		<h1 style="margin-left:20px">Assets</h1>
+		<br/>
+		<div class="wrapper container-fluid">
+  			<div class="d-inline row">
+    			<div class="col-xs-3 one" id="report0" ></div>
+    			<div class="col-xs-3 two" id="report1"></div>
+    			<div class="col-xs-6 seven" id="report2"></div>
+  			</div>
+		</div>
+		<div id="asset_table">
+			<iframe id="myframe" src="/x_545898_cisco_bcs_cisco_assets_list.do" width="100%" height="450" style="border:none;"></iframe>
+		</div>
+	</body>
+	<g:requires name="x_545898_cisco_bcs.Cisco_RenderGraph.jsdbx" />
+</j:jelly>]]></html>
+        <name>Asset_Drilldown</name>
+        <processing_script/>
+        <sys_class_name>sys_ui_page</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2020-11-05 07:10:53</sys_created_on>
+        <sys_id>19a750652f502010bd2551172799b6ca</sys_id>
+        <sys_mod_count>143</sys_mod_count>
+        <sys_name>Asset_Drilldown</sys_name>
+        <sys_package display_value="Cisco BCS Operational Insights" source="x_545898_cisco_bcs">56b8d9362f3310108956ea5ef699b62d</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Cisco BCS Operational Insights">56b8d9362f3310108956ea5ef699b62d</sys_scope>
+        <sys_update_name>sys_ui_page_19a750652f502010bd2551172799b6ca</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2020-11-17 11:49:03</sys_updated_on>
+    </sys_ui_page>
+</record_update>

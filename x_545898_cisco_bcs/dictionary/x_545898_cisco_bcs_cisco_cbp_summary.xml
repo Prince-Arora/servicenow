@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element label="Cisco CBP Summary" max_length="40" name="x_545898_cisco_bcs_cisco_cbp_summary" sizeclass="592" type="collection">
+        <element label="BP Nugget ID" max_length="255" name="bp_nugget_id" type="string"/>
+        <element label="BP Primary Technology" max_length="500" name="bp_primary_technology" type="string"/>
+        <element label="BP Risk" max_length="500" name="bp_risk" type="string"/>
+        <element label="BP Rule ID" max_length="255" name="bp_rule_id" type="string"/>
+        <element label="BP Secondary Technology" max_length="500" name="bp_secondary_technology" type="string"/>
+        <element label="BP Title" max_length="1000" name="bp_title" type="string"/>
+        <element label="CBP Rule" max_length="32" name="cbp_rule" reference="x_545898_cisco_bcs_cisco_cbp_rules" type="reference"/>
+        <element label="SW Type" max_length="255" name="sw_type" type="string"/>
+        <element label="Total Devices" max_length="255" name="total_devices" type="string"/>
+        <index name="index">
+            <element name="cbp_rule"/>
+        </index>
+    </element>
+</database>

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="content_block_programmatic">
+    <content_block_programmatic action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <category>general</category>
+        <condition/>
+        <conditional>false</conditional>
+        <frame/>
+        <logged_on>false</logged_on>
+        <name>Devices Overview</name>
+        <programmatic_content><![CDATA[<?xml version="1.0" encoding="utf-8" ?>
+<j:jelly trim="false" xmlns:j="jelly:core" xmlns:g="glide" xmlns:j2="null" xmlns:g2="null">
+<div class="form-group" style="height: 425px; overflow: hidden;"  onclick="location.href='ui_page.do?sys_id=1e3e64652f902010bd2551172799b6a9'">
+	<div id="device_count" style="padding-left: 4%; padding-bottom: 5%; height: 30%;"></div>
+	<div id="device_overview" style="height: 69%;"></div>
+	<div style="height: 1%;"/>
+</div>
+<script>
+	var ga = new GlideAjax('Cisco_ClientServerBridge');
+	ga.addParam('sysparm_name', 'getDevices');
+	ga.getXML(getAssetResponse);
+	function getAssetResponse(response) {
+		var answer = response.responseXML.documentElement.getAttribute("answer");
+		var result = JSON.parse(answer);
+		$j("#device_count").html('<h1>'+result[1]+'</h1>'+'<b>Unreachable device out of &#160; <label style="font-size: large;"><strong>'+ result[2]+'</strong></label></b>');
+		var name = 'Config Status';
+		var json = {};
+		json[name] = [result[0]];
+		var data_array = [];
+		data_array.push({
+		name: 'Config Status' + ' [' + result[0] + ']',
+		y: parseInt(result[0])
+});
+		renderUIScript("device_overview"," ", data_array, "bar", "Vulnerabilities"," ");
+	
+function renderUIScript(groupBy,title,data,graphType,xAxis,yAxis) {
+		ScriptLoader.getScripts('x_545898_cisco_bcs.Cisco_RenderGraph.jsdbx', function() {
+		x_545898_cisco_bcs.Cisco_RenderGraph.renderBarChartOnWidget(groupBy,title,data,graphType,xAxis,yAxis);
+});
+}
+chart.reflow();
+}
+</script>
+</j:jelly>]]></programmatic_content>
+        <sys_class_name>content_block_programmatic</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2020-10-28 17:40:34</sys_created_on>
+        <sys_id>9c1b15472f486410bd2551172799b608</sys_id>
+        <sys_mod_count>82</sys_mod_count>
+        <sys_name>Devices Overview</sys_name>
+        <sys_package display_value="Cisco BCS Operational Insights" source="x_545898_cisco_bcs">56b8d9362f3310108956ea5ef699b62d</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Cisco BCS Operational Insights">56b8d9362f3310108956ea5ef699b62d</sys_scope>
+        <sys_update_name>content_block_programmatic_9c1b15472f486410bd2551172799b608</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2020-11-17 16:44:33</sys_updated_on>
+        <two_phase>false</two_phase>
+    </content_block_programmatic>
+</record_update>

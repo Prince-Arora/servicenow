@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_ui_page">
+    <sys_ui_page action="INSERT_OR_UPDATE">
+        <category>general</category>
+        <client_script><![CDATA[try{
+	device_drilldown("getDeviceDrilldownInfo","x_545898_cisco_bcs_cisco_devices","sw_type","sw_type","Software Type","pie");
+	device_drilldown("getDeviceDrilldownInfo","x_545898_cisco_bcs_cisco_devices","device_type","device_type","Device Type","pie");
+	device_drilldown("getDeviceDrilldownInfo","x_545898_cisco_bcs_cisco_devices","cpu_type","cpu_type","Product Type","pie");
+	device_drilldown("getDeviceDrilldownInfo","x_545898_cisco_bcs_cisco_devices","sw_type","sw_version","Software Versions Per Software Type","column");
+	$j = jQuery.noConflict();
+	$j('#myframe').load(function(){
+		$j("#myframe").contents().find("a").attr("target","_parent");
+	});
+}catch(e) {
+	
+}
+function device_drilldown(method,tablename,groupBy,reportID,title,graphType) {
+
+	var bridge = new GlideAjax("Cisco_ClientServerBridge");
+	bridge.addParam('sysparm_name', method+"");
+	bridge.addParam('sysparm_table_name', tablename+"");
+	bridge.addParam('sysparm_group_by', groupBy+"");
+	bridge.addParam('sysparm_graph_type', graphType+"");
+	bridge.getXML(devices);
+
+	function devices(response) {
+		var categories = [];
+		var value = [];
+		var answer = response.responseXML.documentElement.getAttribute("answer");
+		answer = JSON.parse(answer);
+		var count = 0;
+		
+		//alert(JSON.stringify(answer));
+		var data_array = [];
+		for (var i in answer) {
+			count++;
+			if(graphType != "column"){
+			data_array.push({
+				name: i + ' [' + parseInt(answer[i]) + ']',
+				y: parseInt(answer[i])
+			});
+			}else{
+				var json = {};
+				categories.push(i);
+				json.name = i;
+				json.data = [{x:count,y:parseInt(answer[i]),color:"#0000FF"}];
+				data_array.push(json);
+				if(count==10)
+					break;
+			}
+		}
+		//alert(JSON.stringify(data_array));
+		var xAxis = {};
+		xAxis.categories = categories;
+		alert(categories);
+		renderUIScript(reportID,title,data_array,graphType,xAxis);
+	}
+}
+function renderUIScript(reportID,title,data,graphType,xAxis) {
+
+	if(graphType == "pie") {
+		ScriptLoader.getScripts('x_545898_cisco_bcs.Cisco_RenderGraph.jsdbx', function() {
+			x_545898_cisco_bcs.Cisco_RenderGraph.renderPieChart(reportID,title,data,graphType,xAxis);
+		});
+	}
+
+	if(graphType == "column") {
+		ScriptLoader.getScripts('x_545898_cisco_bcs.Cisco_RenderGraph.jsdbx', function() {
+			x_545898_cisco_bcs.Cisco_RenderGraph.renderBarChart(reportID,title,data,graphType,xAxis);
+		});
+	}
+}]]></client_script>
+        <description/>
+        <direct>false</direct>
+        <endpoint>x_545898_cisco_bcs_Devices Drilldown view.do</endpoint>
+        <html><![CDATA[<?xml version="1.0" encoding="utf-8" ?>
+<j:jelly trim="false" xmlns:j="jelly:core" xmlns:g="glide" xmlns:j2="null" xmlns:g2="null">
+	<g:inline template="reporting_includes.xml" />
+	<g:requires name="global.Cisco_RenderGraph.jsdbx" />
+	<html>
+		<h1 class="header"> Devices </h1>
+
+		<div class="wrapper container-fluid">
+			<div class="row">
+				<div class="col-xs-3 SoftwareType" id="sw_type"></div>
+				<div class="col-xs-3 DeviceType" id="device_type" ></div>
+				<div class="col-xs-3 ProductType" id="cpu_type"></div>
+				<div class="col-xs-3 SwVersion"  id="sw_version"></div>
+				
+			</div>
+		</div>
+		<br />
+		
+		<div class="devices_list">
+			<iframe id="myframe" src="/x_545898_cisco_bcs_cisco_devices_list.do?" width="100%" height="550" style="border:none;">
+			</iframe>
+		</div>
+
+		<style>
+			.header {
+			margin:20px;
+			}
+			.SwVersion {
+			
+			}
+			
+		</style>
+		
+		<script>
+			
+		</script>
+
+	</html>
+</j:jelly>]]></html>
+        <name>Devices Drilldown view</name>
+        <processing_script/>
+        <sys_class_name>sys_ui_page</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2020-11-05 09:16:15</sys_created_on>
+        <sys_id>1e3e64652f902010bd2551172799b6a9</sys_id>
+        <sys_mod_count>132</sys_mod_count>
+        <sys_name>Devices Drilldown view</sys_name>
+        <sys_package display_value="Cisco BCS Operational Insights" source="x_545898_cisco_bcs">56b8d9362f3310108956ea5ef699b62d</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Cisco BCS Operational Insights">56b8d9362f3310108956ea5ef699b62d</sys_scope>
+        <sys_update_name>sys_ui_page_1e3e64652f902010bd2551172799b6a9</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2020-11-18 09:35:35</sys_updated_on>
+    </sys_ui_page>
+</record_update>

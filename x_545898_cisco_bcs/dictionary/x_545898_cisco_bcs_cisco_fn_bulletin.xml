@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element label="Cisco Field Notice Bulletins" max_length="40" name="x_545898_cisco_bcs_cisco_fn_bulletin" sizeclass="439" type="collection">
+        <element label="Published" max_length="255" name="bulletin_first_published" type="glide_date"/>
+        <element label="Last Updated" max_length="255" name="bulletin_last_updated" type="glide_date_time"/>
+        <element label="Bulletin Mapping Caveat" max_length="1000" name="bulletin_mapping_caveat" type="string"/>
+        <element label="Bulletin Title" max_length="2500" name="bulletin_title" type="string"/>
+        <element label="Bulletin URL" max_length="2000" name="bulletin_url" type="url"/>
+        <element display="true" label="Field Notice ID" max_length="255" name="field_notice_id" type="string"/>
+        <element label="FN Type" max_length="500" name="fn_type" type="string"/>
+        <element calculation="(function calculatedFieldValue(current) {&#13;&#10;&#13;&#10;&#9;var count = 0;&#13;&#10;&#9;var getData = new Cisco_DAOScript();&#13;&#10;&#9;count = getData.getDataOfCalculatedFields(&quot;fieldNotices&quot;,current,&quot;Potentially Vulnerable&quot;,&quot;field_notice_id&quot;);&#13;&#10;&#9;return count;&#13;&#10;&#13;&#10;})(current);" label="Potentially Vulnerable Devices" max_length="40" name="potentially_vulnerable_devices_count" type="integer" virtual="true"/>
+        <element label="Problem Description" max_length="10000" name="problem_description" type="string"/>
+        <element calculation="(function calculatedFieldValue(current) {&#13;&#10;&#13;&#10;&#9;&#13;&#10;&#9;var count = 0;&#13;&#10;&#9;var getData = new Cisco_DAOScript();&#13;&#10;&#9;count = getData.getDataOfCalculatedFields(&quot;fieldNotices&quot;,current,&quot;Vulnerable&quot;,&quot;field_notice_id&quot;);&#13;&#10;&#9;return count;&#13;&#10;&#13;&#10;})(current);" label="Vulnerable Devices" max_length="40" name="vulnerable_devices_count" type="integer" virtual="true"/>
+    </element>
+</database>

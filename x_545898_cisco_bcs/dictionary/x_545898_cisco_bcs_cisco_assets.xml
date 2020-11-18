@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element extends="alm_asset" label="Cisco Assets" max_length="40" name="x_545898_cisco_bcs_cisco_assets" sizeclass="7058" type="collection">
+        <element label="Chassis Name" max_length="255" name="chassis_name" type="string"/>
+        <element label="Asset Device ID" max_length="32" name="deviceid_ref" reference="x_545898_cisco_bcs_cisco_devices" type="reference"/>
+        <element label="Device ID" max_length="255" name="device_id" type="string"/>
+        <element label="HW Rev" max_length="255" name="hw_rev" type="string"/>
+        <element label="Installed Flash" max_length="255" name="installed_flash" type="string"/>
+        <element label="Installed Memory" max_length="255" name="installed_memory" type="string"/>
+        <element label="PCB" max_length="500" name="pcb" type="string"/>
+        <element label="PCB REV" max_length="500" name="pcb_rev" type="string"/>
+        <element display="true" label="Physical Element ID" max_length="255" name="physical_element_id" type="string"/>
+        <element label="Physical Sub Type" max_length="500" name="physical_sub_type" type="string"/>
+        <element label="Physical Type" max_length="255" name="physical_type" type="string"/>
+        <element label="Product Family" max_length="500" name="product_family" type="string"/>
+        <element label="Product ID" max_length="255" name="product_id" type="string"/>
+        <element label="Product Type" max_length="500" name="product_type" type="string"/>
+        <element label="Serial Number Status" max_length="255" name="serial_number_status" type="string"/>
+        <element label="Slot" max_length="255" name="slot" type="string"/>
+        <element label="SW Version" max_length="500" name="sw_version" type="string"/>
+        <element label="Tan" max_length="500" name="tan" type="string"/>
+        <element label="Tan REV" max_length="500" name="tan_rev" type="string"/>
+        <index name="index">
+            <element name="deviceid_ref"/>
+        </index>
+    </element>
+</database>

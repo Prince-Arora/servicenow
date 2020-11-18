@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="content_block_programmatic">
+    <content_block_programmatic action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <category>general</category>
+        <condition/>
+        <conditional>false</conditional>
+        <frame/>
+        <logged_on>false</logged_on>
+        <name>Configuration</name>
+        <programmatic_content><![CDATA[<?xml version="1.0" encoding="utf-8" ?>
+<j:jelly trim="false" xmlns:j="jelly:core" xmlns:g="glide" xmlns:j2="null" xmlns:g2="null">
+	<div id="cbp_div" style="padding-left: 15px;width: 100%; height: 100%;"> 
+		<div>
+			<h1 id="bestPracticeGuidelines"></h1>
+			<b>Best practice guidelines</b>
+		</div>
+		<div>
+			<h1 id="uniqueAdvisories"></h1>
+			<b>Unique devices with advisories</b>
+		</div>
+		<div>
+			<h1 id="avgAdvisories"></h1>
+			<b>Average advisories per device</b>
+		</div>
+	</div>
+	
+	<script>
+		var ga = new GlideAjax('Cisco_ClientServerBridge');
+		ga.addParam('sysparm_name', 'configurationWidgetData');
+		ga.getXML(getConfigurationResponse);
+	   
+		function getConfigurationResponse(response) {
+		
+			var answer = response.responseXML.documentElement.getAttribute("answer");
+	    	var result = JSON.parse(answer);
+		
+		document.getElementById("bestPracticeGuidelines").innerHTML = result[0];
+		document.getElementById("uniqueAdvisories").innerHTML = result[1];
+		document.getElementById("avgAdvisories").innerHTML = result[2];
+		
+		}
+	</script>
+</j:jelly>]]></programmatic_content>
+        <sys_class_name>content_block_programmatic</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2020-11-05 11:45:57</sys_created_on>
+        <sys_id>369695ed2fd02010bd2551172799b600</sys_id>
+        <sys_mod_count>6</sys_mod_count>
+        <sys_name>Configuration</sys_name>
+        <sys_package display_value="Cisco BCS Operational Insights" source="x_545898_cisco_bcs">56b8d9362f3310108956ea5ef699b62d</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Cisco BCS Operational Insights">56b8d9362f3310108956ea5ef699b62d</sys_scope>
+        <sys_update_name>content_block_programmatic_369695ed2fd02010bd2551172799b600</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2020-11-09 11:21:11</sys_updated_on>
+        <two_phase>false</two_phase>
+    </content_block_programmatic>
+</record_update>

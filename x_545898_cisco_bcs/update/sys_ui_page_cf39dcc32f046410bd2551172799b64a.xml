@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_ui_page">
+    <sys_ui_page action="INSERT_OR_UPDATE">
+        <category>general</category>
+        <client_script><![CDATA[try{
+	$j = jQuery.noConflict();
+
+	$j('#list-iframe').load(function(){
+		$j("#list-iframe").contents().find("a").attr("target","_parent");
+	});
+
+	if (document.getElementById("hardwareType-choice").value == "All")
+		hardwareType("All");
+}catch(e){
+	alert(e);
+}
+function hardwareType(val) {
+
+	var software = new GlideAjax("Cisco_ClientServerBridge");
+	software.addParam('sysparm_name', 'hardwareLifecycleDrilldown');
+	software.addParam('sysparm_hw_value',val);
+	software.getXML(HardwareLifecycleData);
+
+	switch (val) {
+		case "All":
+			document.getElementById("list-iframe").src = "/x_545898_cisco_bcs_cisco_hardware_lifecycle_list.do?sysparm_fixed_query=current_milestone%3DLDoS";
+			break;
+		case "Chassis":
+			document.getElementById("list-iframe").src = "/x_545898_cisco_bcs_cisco_hardware_lifecycle_list.do?sysparm_fixed_query=current_milestone%3DLDoS^physical_type%3DChassis";
+			break;
+		case "Module":
+			document.getElementById("list-iframe").src = "/x_545898_cisco_bcs_cisco_hardware_lifecycle_list.do?sysparm_fixed_query=current_milestone%3DLDoS^physical_type%3DModule";
+			break;
+		case "Fan":
+			document.getElementById("list-iframe").src = "/x_545898_cisco_bcs_cisco_hardware_lifecycle_list.do?sysparm_fixed_query=current_milestone%3DLDoS^physical_type%3DFan";
+			break;
+		case "Power Supply":
+			document.getElementById("list-iframe").src = "/x_545898_cisco_bcs_cisco_hardware_lifecycle_list.do?sysparm_fixed_query=current_milestone%3DLDoS^physical_type%3DPower%20Supply";
+			break;		
+	}
+}
+
+function HardwareLifecycleData(response) {
+	var answer = response.responseXML.documentElement.getAttribute("answer");
+	var result = JSON.parse(answer);
+	var count = 0;
+	var categories = ['Past','0-1y','1-2y','2-3y','3+ years','Not Announced'];
+	var json = {};
+	json.categories = categories;
+	var data_array = [];
+	for (var i in result) {
+		data_array.push({
+			name: i ,
+			data: [{ x : count , y : parseInt(result[i]) }]
+		});
+		count++;
+	}
+	renderUIScript("container"," ",data_array,"column",json,"Hardware Count");
+}
+
+function renderUIScript(groupBy,title,data,graphType,xAxis,yAxis) {
+	ScriptLoader.getScripts('x_545898_cisco_bcs.Cisco_RenderGraph.jsdbx', function() {
+		x_545898_cisco_bcs.Cisco_RenderGraph.renderBarChart(groupBy,title,data,graphType,xAxis,yAxis);
+	});
+}]]></client_script>
+        <description/>
+        <direct>false</direct>
+        <endpoint>x_545898_cisco_bcs_Hardware Lifecycle drilldown.do</endpoint>
+        <html><![CDATA[<?xml version="1.0" encoding="utf-8" ?>
+<j:jelly trim="false" xmlns:j="jelly:core" xmlns:g="glide" xmlns:j2="null" xmlns:g2="null">
+<g:inline template="reporting_includes.xml" />
+	<html>
+<!-- 		<script src="https://code.highcharts.com/highcharts.js"></script> -->
+		<figure class="highcharts-figure">
+			<div id="container"></div>
+		</figure>
+
+		<h1 class="header"> Hardware Lifecycle </h1>
+		<br />
+		<div class="milestone-choice">
+			<label> <strong> Select Milestone </strong> </label>
+			<select id="milestone-choice" class="form-control select2-basic" style="max-width:15%;" onChange="milestone()">
+				<option value="milestone-div">Last Date of Support</option>
+			</select>
+		</div>
+		<br />
+		<div class="productFamily">
+			<label> <strong> Product Family </strong> </label>
+			<select id="productFamily-choice" class="form-control select2-basic" style="max-width:15%;" onChange="productFamily()">
+				<option value="productFamily-div"> All </option>
+			</select>
+		</div>
+
+		<br />
+		<div class="hardwareType">
+			<label> <strong> Hardware Type </strong> </label>
+			<select id="hardwareType-choice" class="form-control select2-basic" style="max-width:15%;" onchange="hardwareType(this.value)">
+				<option id="all" value="All"> All </option>
+				<option id="chassis" value="Chassis"> Chassis </option>
+				<option id="module" value="Module"> Module </option>
+				<option id="fan" value="Fan"> Fan </option>
+				<option id="pwsupply" value="Power Supply"> Power Supply </option>
+			</select>
+		</div>
+		<br />
+
+		<div class="hardware-list" id="hardware-list">
+			<iframe id="list-iframe" src="/x_545898_cisco_bcs_cisco_hardware_lifecycle_list.do?sysparm_fixed_query=current_milestone%3DLDoS" width="100%" height="550" style="border:none;">
+			</iframe>
+		</div>
+
+		<style>
+			<!-- .highcharts-figure, .highcharts-data-table table {
+			min-width: 310px; 
+			max-width: 800px;
+			margin: 1em auto;
+			}
+
+			#container {
+			height: 400px;
+			}
+
+			.highcharts-data-table table {
+			font-family: Verdana, sans-serif;
+			border-collapse: collapse;
+			border: 1px solid #EBEBEB;
+			margin: 10px auto;
+			text-align: center;
+			width: 100%;
+			max-width: 500px;
+			}
+			.highcharts-data-table caption {
+			padding: 1em 0;
+			font-size: 1.2em;
+			color: #555;
+			}
+			.highcharts-data-table th {
+			font-weight: 600;
+			padding: 0.5em;
+			}
+			.highcharts-data-table td, .highcharts-data-table th, .highcharts-data-table caption {
+			padding: 0.5em;
+			}
+			.highcharts-data-table thead tr, .highcharts-data-table tr:nth-child(even) {
+			background: #f8f8f8;
+			}
+			.highcharts-data-table tr:hover {
+			background: #f1f7ff;
+			} -->
+			.highcharts-figure {
+			width:60%;
+			float:right;
+			margin-top:20px;
+			}
+			.header {
+			margin-left:20px;
+			margin-top:20px;
+			}
+		
+			.milestone-choice {
+			margin-left:20px;
+			}
+			.productFamily {
+			
+		
+			margin-left:20px;
+			width:95%;
+			}
+			.hardwareType {
+			margin-left:20px;
+			width:100%;		
+			}
+			.hardware-list {
+			margin-top:50px;
+			margin-left:20px;
+   margin-right:20px;
+			}
+			.graph {
+			width:60%;
+			float:right;
+			margin-top:20px;
+			}
+
+		</style>
+	</html>
+
+</j:jelly>]]></html>
+        <name>Hardware Lifecycle drilldown</name>
+        <processing_script/>
+        <sys_class_name>sys_ui_page</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2020-10-28 12:55:01</sys_created_on>
+        <sys_id>cf39dcc32f046410bd2551172799b64a</sys_id>
+        <sys_mod_count>34</sys_mod_count>
+        <sys_name>Hardware Lifecycle drilldown</sys_name>
+        <sys_package display_value="Cisco BCS Operational Insights" source="x_545898_cisco_bcs">56b8d9362f3310108956ea5ef699b62d</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Cisco BCS Operational Insights">56b8d9362f3310108956ea5ef699b62d</sys_scope>
+        <sys_update_name>sys_ui_page_cf39dcc32f046410bd2551172799b64a</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2020-11-17 17:11:36</sys_updated_on>
+    </sys_ui_page>
+</record_update>

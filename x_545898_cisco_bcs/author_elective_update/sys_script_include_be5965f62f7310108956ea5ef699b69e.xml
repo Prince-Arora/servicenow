@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="DELETE">
+        <access>package_private</access>
+        <active>true</active>
+        <api_name>x_545898_cisco_bcs.Cisco_ClientServerBridge</api_name>
+        <caller_access/>
+        <client_callable>true</client_callable>
+        <description/>
+        <name>Cisco_ClientServerBridge</name>
+        <script><![CDATA[var Cisco_ClientServerBridge = Class.create();
+Cisco_ClientServerBridge.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
+  
+	gettingDataFromDeleteButton:function(){
+		try{
+			gs.info("Prince gettingDataFromDeleteButton");
+		var logger = new Cisco_BCS_SNLogger();
+		logger.debug("Inside Cisco_ClientServerBridge.gettingDataFromDeleteButton while getting data from Delete UI action.");
+		var daoScript = new Cisco_DAOScript();
+		var result = daoScript.clearApplicationData();
+		return true;
+		}catch(e){
+			logger.error("Exception caught inside Cisco_ClientServerBridge.gettingDataFromDeleteButton while getting data from Delete UI action. " + e);
+		}
+		
+	},
+    type: 'Cisco_ClientServerBridge'
+});]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2020-10-15 13:49:20</sys_created_on>
+        <sys_id>be5965f62f7310108956ea5ef699b69e</sys_id>
+        <sys_mod_count>12</sys_mod_count>
+        <sys_name>Cisco_ClientServerBridge</sys_name>
+        <sys_package display_value="Cisco BCS Operational Insights" source="x_545898_cisco_bcs">56b8d9362f3310108956ea5ef699b62d</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="Cisco BCS Operational Insights">56b8d9362f3310108956ea5ef699b62d</sys_scope>
+        <sys_update_name>sys_script_include_be5965f62f7310108956ea5ef699b69e</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2020-10-25 15:01:17</sys_updated_on>
+    </sys_script_include>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Cisco BCS Operational Insights">56b8d9362f3310108956ea5ef699b62d</application>
+        <file_path/>
+        <instance_id>ec6084dddb6bd7c4439ef70fbf96197b</instance_id>
+        <instance_name>dev67149</instance_name>
+        <name>sys_script_include_be5965f62f7310108956ea5ef699b69e</name>
+        <payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update table="sys_script_include"&gt;&lt;sys_script_include action="INSERT_OR_UPDATE"&gt;&lt;access&gt;package_private&lt;/access&gt;&lt;active&gt;true&lt;/active&gt;&lt;api_name&gt;x_545898_cisco_bcs.Cisco_ClientServerBridge&lt;/api_name&gt;&lt;caller_access/&gt;&lt;client_callable&gt;true&lt;/client_callable&gt;&lt;description/&gt;&lt;name&gt;Cisco_ClientServerBridge&lt;/name&gt;&lt;script&gt;&lt;![CDATA[var Cisco_ClientServerBridge = Class.create();
+Cisco_ClientServerBridge.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
+  
+	gettingDataFromDeleteButton:function(){
+		try{
+			gs.info("Prince gettingDataFromDeleteButton");
+		var logger = new Cisco_BCS_SNLogger();
+		logger.debug("Inside Cisco_ClientServerBridge.gettingDataFromDeleteButton while getting data from Delete UI action.");
+		var daoScript = new Cisco_DAOScript();
+		var result = daoScript.clearApplicationData();
+		return true;
+		}catch(e){
+			logger.error("Exception caught inside Cisco_ClientServerBridge.gettingDataFromDeleteButton while getting data from Delete UI action. " + e);
+		}
+		
+	},
+    type: 'Cisco_ClientServerBridge'
+});]]&gt;&lt;/script&gt;&lt;sys_class_name&gt;sys_script_include&lt;/sys_class_name&gt;&lt;sys_created_by&gt;admin&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2020-10-15 13:49:20&lt;/sys_created_on&gt;&lt;sys_id&gt;be5965f62f7310108956ea5ef699b69e&lt;/sys_id&gt;&lt;sys_mod_count&gt;12&lt;/sys_mod_count&gt;&lt;sys_name&gt;Cisco_ClientServerBridge&lt;/sys_name&gt;&lt;sys_package display_value="Cisco BCS Operational Insights" source="x_545898_cisco_bcs"&gt;56b8d9362f3310108956ea5ef699b62d&lt;/sys_package&gt;&lt;sys_policy&gt;read&lt;/sys_policy&gt;&lt;sys_scope display_value="Cisco BCS Operational Insights"&gt;56b8d9362f3310108956ea5ef699b62d&lt;/sys_scope&gt;&lt;sys_update_name&gt;sys_script_include_be5965f62f7310108956ea5ef699b69e&lt;/sys_update_name&gt;&lt;sys_updated_by&gt;admin&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2020-10-25 15:01:17&lt;/sys_updated_on&gt;&lt;/sys_script_include&gt;&lt;/record_update&gt;</payload>
+        <payload_hash>1127785994</payload_hash>
+        <record_name>Cisco_ClientServerBridge</record_name>
+        <reverted_from/>
+        <source>5cac71152f002010bd2551172799b688</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2020-10-25 15:01:17</sys_created_on>
+        <sys_id>80e999022fc0a010bd2551172799b651</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>175604726dc0000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2020-10-25 15:01:17</sys_updated_on>
+        <type>Script Include</type>
+        <update_guid>0ce9990296c0a01049c7a8c6540e4c50</update_guid>
+        <update_guid_history>0ce9990296c0a01049c7a8c6540e4c50:1127785994,a3a6598e3480a010ecbfc00c085011a9:-1762929186,f8d5118e8280a010a6d7a4de9cff7d4a:-44377236,4165d94ed980a0109be1d97a422982f6:1686609162,07041d0ea980a010e2a03a803d9e4a7d:1468131070,51a151ca3880a010d949e9acd49f716a:-1435245393,7ae0dd0e6640a010db48021b4b0ce29f:-1561693094,caa970b97b0860102fdbecd6bbd100a6:-1323498559,82b83875f9086010abc3a973bae8720a:-1561693094,c4b8f0796508601091b2170132ac7dc2:2004762031,d108b879cc08601004ae0a2d89d926af:947553283,dab9253aee7310104a4ee9aac2e76ee3:54247404,a88965f63d73101053cfae05ea1ca2a4:728267059</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2020-10-25 15:02:28</sys_created_on>
+        <sys_db_object display_value="" name="sys_script_include">sys_script_include</sys_db_object>
+        <sys_id>18fddd6980484200a65d71dab3aa4000</sys_id>
+        <sys_metadata>be5965f62f7310108956ea5ef699b69e</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Cisco_ClientServerBridge</sys_name>
+        <sys_package display_value="Cisco BCS Operational Insights" source="x_545898_cisco_bcs">56b8d9362f3310108956ea5ef699b62d</sys_package>
+        <sys_parent/>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="Cisco BCS Operational Insights">56b8d9362f3310108956ea5ef699b62d</sys_scope>
+        <sys_scope_delete display_value="">051332bed1934b709318384fcb4b2891</sys_scope_delete>
+        <sys_update_name>sys_script_include_be5965f62f7310108956ea5ef699b69e</sys_update_name>
+        <sys_update_version display_value="sys_script_include_be5965f62f7310108956ea5ef699b69e">80e999022fc0a010bd2551172799b651</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2020-10-25 15:02:28</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

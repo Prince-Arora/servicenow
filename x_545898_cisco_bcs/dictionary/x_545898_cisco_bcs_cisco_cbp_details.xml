@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element label="Cisco CBP Details" max_length="40" name="x_545898_cisco_bcs_cisco_cbp_details" sizeclass="592" type="collection">
+        <element label="BP Nugget ID" max_length="255" name="bp_nugget_id" type="string"/>
+        <element label="BP Rule ID" max_length="255" name="bp_rule_id" type="string"/>
+        <element label="CBP Rule" max_length="32" name="cbp_rule" reference="x_545898_cisco_bcs_cisco_cbp_rules" type="reference"/>
+        <element label="Config Source" max_length="500" name="config_source" type="string"/>
+        <element label="Device" max_length="32" name="device" reference="x_545898_cisco_bcs_cisco_devices" type="reference"/>
+        <element label="Device ID" max_length="255" name="device_id" type="string"/>
+        <index name="index">
+            <element name="cbp_rule"/>
+        </index>
+        <index name="index2">
+            <element name="device"/>
+        </index>
+    </element>
+</database>

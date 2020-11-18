@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="content_block_programmatic">
+    <content_block_programmatic action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <category>general</category>
+        <condition/>
+        <conditional>false</conditional>
+        <frame/>
+        <logged_on>false</logged_on>
+        <name>Devices</name>
+        <programmatic_content><![CDATA[<?xml version="1.0" encoding="utf-8" ?>
+<j:jelly trim="false" xmlns:j="jelly:core" xmlns:g="glide" xmlns:j2="null" xmlns:g2="null">
+   
+	<div id="devices_overview" ></div>
+   <script>
+	  
+ 	var ga1 = new GlideAjax('Cisco_ClientServerBridge');
+	ga1.addParam('sysparm_name', 'getDevices');
+	ga1.getXML(getDeviceResponse);
+	function getDeviceResponse(response) {
+  		var answer = response.responseXML.documentElement.getAttribute("answer");
+	   alert(answer);
+	    //var result = JSON.parse(answer);
+	  	//$j("#device_asset_count").html('<h1>'+result[0]+'</h1>');
+	   	var chart = Highcharts.chart('devices_overview', {
+   		 chart: {
+        type: 'bar'
+   		 },
+    	title: {
+	  
+        text: 'Device Overview'
+    	},
+	   credits: {
+    	enabled: false
+ 	 },
+   		 xAxis: {
+     	 text: 'Vulnerabilities',	   
+		 visible: false
+    },
+    yAxis: {
+        min: 0,
+        title: {
+        	
+        },
+	   visible: false
+    },
+	  
+   plotOptions: {
+        series: {
+            dataLabels: {
+                enabled: true,
+                align: 'right',
+                color: '#000000',
+                x: -10,
+	   
+            },
+	   		pointWidth: 25,
+            pointPadding: 0.1,
+            groupPadding: 0
+        }
+    },
+    tooltip: {
+        headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
+        pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
+            '<td style="padding:0"><b>{point.y:1f} </b></td></tr>',
+        footerFormat: '</table>',
+        shared: true,
+        useHTML: true
+    },
+   
+    series: [ {
+        name: 'Collected Configs',
+        data: [1];
+
+    }]
+	   
+});
+	   chart.reflow();
+	   }
+	   
+	</script>
+</j:jelly>]]></programmatic_content>
+        <sys_class_name>content_block_programmatic</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2020-10-28 15:27:35</sys_created_on>
+        <sys_id>dcac344b2fc46410bd2551172799b651</sys_id>
+        <sys_mod_count>34</sys_mod_count>
+        <sys_name>Devices</sys_name>
+        <sys_package display_value="Cisco BCS Operational Insights" source="x_545898_cisco_bcs">56b8d9362f3310108956ea5ef699b62d</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Cisco BCS Operational Insights">56b8d9362f3310108956ea5ef699b62d</sys_scope>
+        <sys_update_name>content_block_programmatic_dcac344b2fc46410bd2551172799b651</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2020-10-28 17:06:15</sys_updated_on>
+        <two_phase>false</two_phase>
+    </content_block_programmatic>
+</record_update>

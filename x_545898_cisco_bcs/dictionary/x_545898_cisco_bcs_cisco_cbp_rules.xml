@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element label="Cisco CBP Rules" max_length="40" name="x_545898_cisco_bcs_cisco_cbp_rules" sizeclass="1610" type="collection">
+        <element label="BP Caveat" max_length="500" name="bp_caveat" type="string"/>
+        <element label="BP Corrective Action" max_length="20000" name="bp_corrective_action" type="string"/>
+        <element label="BP Description" max_length="20000" name="bp_description" type="string"/>
+        <element label="Bp Nugget ID" max_length="255" name="bp_nugget_id" type="string"/>
+        <element label="BP Primary Technology" max_length="500" name="bp_primary_technology" type="string"/>
+        <element label="BP Recommendation" max_length="25000" name="bp_recommendation" type="string"/>
+        <element label="BP Risk" max_length="255" name="bp_risk" type="string"/>
+        <element label="BP Rule ID" max_length="255" name="bp_rule_id" type="string"/>
+        <element label="BP Secondary Technology" max_length="500" name="bp_secondary_technology" type="string"/>
+        <element label="BP Title" max_length="1000" name="bp_title" type="string"/>
+        <element label="Create Date" max_length="255" name="create_date" type="string"/>
+        <element label="SW Type" max_length="255" name="sw_type" type="string"/>
+        <element label="Update Date" max_length="500" name="update_date" type="string"/>
+    </element>
+</database>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_ui_page">
+    <sys_ui_page action="INSERT_OR_UPDATE">
+        <category>general</category>
+        <client_script><![CDATA[function myFunction(){
+	if(confirm("Thank you for your feedback."))
+		location.reload();
+	else
+		location.reload();
+	
+}]]></client_script>
+        <description/>
+        <direct>false</direct>
+        <endpoint>x_545898_cisco_bcs_My_Feedback_Form.do</endpoint>
+        <html><![CDATA[<?xml version="1.0" encoding="utf-8" ?>
+<j:jelly trim="false" xmlns:j="jelly:core" xmlns:g="glide" xmlns:j2="null" xmlns:g2="null">
+<div>
+	<textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea><br></br>
+    <input class="btn btn-primary" type="submit" value="Submit" onclick="myFunction()"/>
+</div>
+</j:jelly>]]></html>
+        <name>My_Feedback_Form</name>
+        <processing_script/>
+        <sys_class_name>sys_ui_page</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2020-11-10 09:35:21</sys_created_on>
+        <sys_id>9d70ae032fd06010bd2551172799b62e</sys_id>
+        <sys_mod_count>10</sys_mod_count>
+        <sys_name>My_Feedback_Form</sys_name>
+        <sys_package display_value="Cisco BCS Operational Insights" source="x_545898_cisco_bcs">56b8d9362f3310108956ea5ef699b62d</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Cisco BCS Operational Insights">56b8d9362f3310108956ea5ef699b62d</sys_scope>
+        <sys_update_name>sys_ui_page_9d70ae032fd06010bd2551172799b62e</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2020-11-11 05:27:23</sys_updated_on>
+    </sys_ui_page>
+</record_update>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element label="Cisco SW EOX Bulletins" max_length="40" name="x_545898_cisco_bcs_cisco_sw_eox_bulletins" sizeclass="900" type="collection">
+        <element label="Bulletin Number" max_length="255" name="bulletin_number" type="string"/>
+        <element label="Bulletin Title" max_length="1000" name="bulletin_title" type="string"/>
+        <element label="Bulletin URL" max_length="2500" name="bulletin_url" type="url"/>
+        <element calculation="(function calculatedFieldValue(current) {&#13;&#10;&#13;&#10;&#9;var count = 0;&#13;&#10;&#9;var sw_eox = new GlideRecord(&quot;x_545898_cisco_bcs_cisco_software_lifecycle&quot;);&#13;&#10;&#9;sw_eox.addQuery(&quot;sw_id&quot;,current.sw_eox_id);&#13;&#10;&#9;sw_eox.query();&#13;&#10;&#9;while(sw_eox.next()) &#13;&#10;&#9;&#9;count = count + 1;&#13;&#10;&#9;return count;&#13;&#10;&#13;&#10;})(current);" label="Devices" max_length="40" name="devices" type="integer" virtual="true"/>
+        <element label="EoLife Announcement Date" max_length="255" name="eolife_announcement_date" type="glide_date_time"/>
+        <element label="EoSale Date" max_length="255" name="eosale_date" type="glide_date_time"/>
+        <element label="EoSecurity Vul Support Date" max_length="255" name="eosecurity_vul_support_date" type="glide_date_time"/>
+        <element label="EoSW Maintenance Releases Date" max_length="255" name="eosw_maintenance_releases_date" type="glide_date_time"/>
+        <element label="Last Date of Support" max_length="255" name="last_date_of_support" type="glide_date_time"/>
+        <element display="true" label="SW EOX ID" max_length="255" name="sw_eox_id" type="string"/>
+        <element label="SW Maintenance Version" max_length="500" name="sw_maintenance_version" type="string"/>
+        <element label="SW Major Version" max_length="500" name="sw_major_version" type="string"/>
+        <element label="SW Train" max_length="500" name="sw_train" type="string"/>
+        <element label="SW Type" max_length="500" name="sw_type" type="string"/>
+    </element>
+</database>

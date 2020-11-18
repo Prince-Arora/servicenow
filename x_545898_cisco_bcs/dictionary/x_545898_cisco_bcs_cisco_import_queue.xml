@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element label="Cisco Import Queue" max_length="40" name="x_545898_cisco_bcs_cisco_import_queue" sizeclass="444718" type="collection">
+        <element label="BCS" max_length="32" name="bcs" reference="x_545898_cisco_bcs_configuration" type="reference"/>
+        <element label="Parameter" max_length="1000" name="parameter" type="string"/>
+        <element label="Payload" max_length="10000" name="payload" type="string"/>
+        <element choice="3" default="ready" label="State" max_length="1000" name="state" type="string">
+            <choice>
+                <element inactive_on_update="false" label="Wait" sequence="0" value="wait"/>
+                <element inactive_on_update="false" label="Ready" sequence="1" value="ready"/>
+                <element inactive_on_update="false" label="In Progress" sequence="2" value="processing"/>
+                <element inactive_on_update="false" label="Completed" sequence="3" value="completed"/>
+                <element inactive_on_update="false" label="Error" sequence="4" value="error"/>
+            </choice>
+        </element>
+        <element label="Topic" max_length="1000" name="topic" type="string"/>
+        <index name="index">
+            <element name="bcs"/>
+        </index>
+    </element>
+</database>

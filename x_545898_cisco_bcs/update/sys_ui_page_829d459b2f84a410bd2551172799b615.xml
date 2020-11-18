@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_ui_page">
+    <sys_ui_page action="INSERT_OR_UPDATE">
+        <category>general</category>
+        <client_script/>
+        <description/>
+        <direct>false</direct>
+        <endpoint>x_545898_cisco_bcs_Cisco BCS feedback form 2.do</endpoint>
+        <html><![CDATA[<?xml version="1.0" encoding="utf-8" ?>
+<j:jelly trim="false" xmlns:j="jelly:core" xmlns:g="glide" xmlns:j2="null" xmlns:g2="null">
+ <head>
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css"/>
+	 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+  </head>
+	<div id ="feedback">
+	 <div class= "head">
+      <i class="fa fa-comment" aria-hidden="true"></i>
+      <p class= "header_line" style="display: inline-block">
+        Feel free to rate us! 
+      </p>
+	</div><hr/>
+	
+	   <h4>
+          <span ng-if="compare(rating1)">*</span>Please rate your experience for Asset Overview
+        </h4>
+ 		  <div class="starRating">
+          <input id="star-Q1-5" type="radio"  class="stars stars-5" name="radio-Q1-5" value ="5" ng-model="rating1" />
+          <label for="star-Q1-5" class="stars stars-5"></label>
+          <input id="star-Q1-4" type="radio" class="stars stars-4" name="radio-Q1-4" value ="4" ng-model="rating1" />
+          <label for="star-Q1-4" class="stars stars-4"></label>
+          <input id="star-Q1-3"  type="radio" class="stars stars-3" name="radio-Q1-3" value ="3" ng-model="rating1" />
+          <label for="star-Q1-3" class="stars stars-3"></label>
+          <input id="star-Q1-2" type="radio" class="stars stars-2" name="radio-Q1-2" value ="2" ng-model="rating1" />
+          <label for="star-Q1-2" class="stars stars-2"></label>
+          <input id="star-Q1-1" type="radio"  class="stars stars-1" name="radio-Q1-1" value ="1" ng-model="rating1" />
+          <label for="star-Q1-1" class="stars stars-1"></label>
+          </div>
+	 <textarea ng-class ="{'feedback_textArea':true,'error':feedbackForm['comment1'].$invalid}" id="asset_comment" name="comment1" placeholder="Write your comments here" style="display: inline-block" ng-model="comment1" ng-required = "compare(rating1)"></textarea>
+	 <h4>
+		 
+          <span ng-if="compare(rating1)">*</span>Please rate your experience for Individual Asset
+        </h4>
+ 		  <div class="starRating">
+          <input id="star-Q2-5" type="radio"  class="stars stars-5" name="radio-Q2-5" value ="5" ng-model="rating1" />
+          <label for="star-Q2-5" class="stars stars-5"></label>
+          <input id="star-Q2-4" type="radio" class="stars stars-4" name="radio-Q2-4" value ="4" ng-model="rating1" />
+          <label for="star-Q2-4" class="stars stars-4"></label>
+          <input id="star-Q2-3"  type="radio" class="stars stars-3" name="radio-Q2-3" value ="3" ng-model="rating1" />
+          <label for="star-Q2-3" class="stars stars-3"></label>
+          <input id="star-Q2-2" type="radio" class="stars stars-2" name="radio-Q2-2" value ="2" ng-model="rating1" />
+          <label for="star-Q2-2" class="stars stars-2"></label>
+          <input id="star-Q2-1" type="radio"  class="stars stars-1" name="radio-Q2-1" value ="1" ng-model="rating1" />
+          <label for="star-Q2-1" class="stars stars-1"></label>
+          </div>
+	<textarea ng-class ="{'feedback_textArea':true,'error':feedbackForm['comment2'].$invalid}" id="individual_asset_comment" name="comment2" placeholder="Write your comments here" style="display: inline-block" ng-model="comment2" ng-required = "compare(rating2)"></textarea>
+	 <h4>
+		 
+          <span ng-if="compare(rating1)">*</span>Please rate your experience for Configuration
+        </h4>
+ 		  <div class="starRating">
+          <input id="star-Q3-5" type="radio"  class="stars stars-5" name="radio-Q3-5" value ="5" ng-model="rating1" />
+          <label for="star-Q3-5" class="stars stars-5"></label>
+          <input id="star-Q3-4" type="radio" class="stars stars-4" name="radio-Q3-4" value ="4" ng-model="rating1" />
+          <label for="star-Q3-4" class="stars stars-4"></label>
+          <input id="star-Q3-3"  type="radio" class="stars stars-3" name="radio-Q3-3" value ="3" ng-model="rating1" />
+          <label for="star-Q3-3" class="stars stars-3"></label>
+          <input id="star-Q3-2" type="radio" class="stars stars-2" name="radio-Q3-2" value ="2" ng-model="rating1" />
+          <label for="star-Q3-2" class="stars stars-2"></label>
+          <input id="star-Q3-1" type="radio"  class="stars stars-1" name="radio-Q3-1" value ="1" ng-model="rating1" />
+          <label for="star-Q3-1" class="stars stars-1"></label>
+          </div>
+	 <textarea ng-class ="{'feedback_textArea':true,'error':feedbackForm['comment3'].$invalid}" id="Configuration_comment" name="comment3" placeholder="Write your comments here" style="display: inline-block" ng-model="comment3" ng-required = "compare(rating3)"></textarea>
+	 <h4>
+		  
+          <span ng-if="compare(rating1)">*</span>Please rate your experience for Vulnerabilities
+        </h4>
+ 		  <div class="starRating">
+          <input id="star-Q4-5" type="radio"  class="stars stars-5" name="radio-Q4-5" value ="5" ng-model="rating1" />
+          <label for="star-Q4-5" class="stars stars-5"></label>
+          <input id="star-Q4-4" type="radio" class="stars stars-4" name="radio-Q4-4" value ="4" ng-model="rating1" />
+          <label for="star-Q4-4" class="stars stars-4"></label>
+          <input id="star-Q4-3"  type="radio" class="stars stars-3" name="radio-Q4-3" value ="3" ng-model="rating1" />
+          <label for="star-Q4-3" class="stars stars-3"></label>
+          <input id="star-Q4-2" type="radio" class="stars stars-2" name="radio-Q4-2" value ="2" ng-model="rating1" />
+          <label for="star-Q4-2" class="stars stars-2"></label>
+          <input id="star-Q4-1" type="radio"  class="stars stars-1" name="radio-Q4-1" value ="1" ng-model="rating1" />
+          <label for="star-Q4-1" class="stars stars-1"></label>
+          </div>
+	 <textarea ng-class ="{'feedback_textArea':true,'error':feedbackForm['comment4'].$invalid}" id="vulnerabilities_comment" name="comment4" placeholder="Write your comments here" style="display: inline-block" ng-model="comment4" ng-required = "compare(rating4)"></textarea>
+	 <h4>
+		  
+          <span ng-if="compare(rating1)">*</span>Please rate your experience for Software Lifecycle
+        </h4>
+ 		  <div class="starRating">
+          <input id="star-Q5-5" type="radio"  class="stars stars-5" name="radio-Q5-5" value ="5" ng-model="rating1" />
+          <label for="star-Q5-5" class="stars stars-5"></label>
+          <input id="star-Q5-4" type="radio" class="stars stars-4" name="radio-Q5-4" value ="4" ng-model="rating1" />
+          <label for="star-Q5-4" class="stars stars-4"></label>
+          <input id="star-Q5-3"  type="radio" class="stars stars-3" name="radio-Q5-3" value ="3" ng-model="rating1" />
+          <label for="star-Q5-3" class="stars stars-3"></label>
+          <input id="star-Q5-2" type="radio" class="stars stars-2" name="radio-Q5-2" value ="2" ng-model="rating1" />
+          <label for="star-Q5-2" class="stars stars-2"></label>
+          <input id="star-Q5-1" type="radio"  class="stars stars-1" name="radio-Q5-1" value ="1" ng-model="rating1" />
+          <label for="star-Q5-1" class="stars stars-1"></label>
+          </div>
+	 <textarea ng-class ="{'feedback_textArea':true,'error':feedbackForm['comment5'].$invalid}" id="software_comment" name="comment5" placeholder="Write your comments here" style="display: inline-block" ng-model="comment5" ng-required = "compare(rating5)"></textarea>
+	
+	 <h4>
+		
+          <span ng-if="compare(rating1)">*</span>Please rate your experience for Hardware Lifecycle
+        </h4>
+ 		  <div class="starRating">
+          <input id="star-Q6-5" type="radio"  class="stars stars-5" name="radio-Q6-5" value ="5" ng-model="rating1" />
+          <label for="star-Q6-5" class="stars stars-5"></label>
+          <input id="star-Q6-4" type="radio" class="stars stars-4" name="radio-Q6-4" value ="4" ng-model="rating1" />
+          <label for="star-Q6-4" class="stars stars-4"></label>
+          <input id="star-Q6-3"  type="radio" class="stars stars-3" name="radio-Q6-3" value ="3" ng-model="rating1" />
+          <label for="star-Q6-3" class="stars stars-3"></label>
+          <input id="star-Q6-2" type="radio" class="stars stars-2" name="radio-Q6-2" value ="2" ng-model="rating1" />
+          <label for="star-Q6-2" class="stars stars-2"></label>
+          <input id="star-Q6-1" type="radio"  class="stars stars-1" name="radio-Q6-1" value ="1" ng-model="rating1" />
+          <label for="star-Q6-1" class="stars stars-1"></label>
+          </div>
+		<textarea ng-class ="{'feedback_textArea':true,'error':feedbackForm['comment6'].$invalid}" id="hardware_comment" name="comment6" placeholder="Write your comments here" style="display: inline-block" ng-model="comment6" ng-required = "compare(rating6)"></textarea>
+	</div>
+	 <div>
+        <h4>
+          Enter your overall feedback here
+        </h4>
+        <textarea id="subject" placeholder="How can we improve your experience?" ng-model="mainFeedback" name="mainFeedback"></textarea>
+      </div>
+	  <button ng-disabled="!feedbackForm.$valid" type="button" class="btn btn-primary submit_btn" ng-click="submitData2(feedbackForm)" >Submit</button>
+	<style>
+		#feedback{
+		padding-left:20px;
+		padding-top:15px;
+		},
+	.header_line{
+  padding: 5px;
+}
+.head{
+  font-size: 2em;
+}
+#subject{
+  width: 100%;
+  height: 100px;
+}
+
+.submit_btn{
+  float: right;
+  margin: 20px;
+}
+
+.error{
+border:1px solid red;
+}
+
+.feedback_textArea{
+  width: 30%;
+  height: 20%;
+  color: #444;
+  margin-left: 0px;
+  margin-bottom: 10px;
+  display: inline-block;
+}
+.borderRed{
+border:1px solid red !important;
+}
+div.starRating {
+  width: 250px;
+  display: inline-block;
+}
+
+input.stars { display: none; }
+
+label.stars {
+  text-align: left;
+  padding-left: 0px;
+  float: right;
+  padding: 10px;
+  font-size: 25px;
+  color: #444;
+  transition: all .2s;
+  
+}
+
+input.stars:checked ~ label.stars:before {
+  content: '\f005';
+  color: #FD4;
+  transition: all .25s;
+}
+
+input.stars-5:checked ~ label.stars:before {
+  color: #FE7;
+  text-shadow: 0 0 3px #952;
+}
+
+input.stars-1:checked ~ label.stars:before { color: #F62; }
+
+label.stars:hover {
+  transform: rotate(-15deg) scale(1.0); 
+ /* content: '\f005';
+  color: #FD4;
+  transition: all .25s;*/
+}
+
+label.stars:before {
+  content: '\f006';
+  font-family: FontAwesome;
+}
+</style>
+	
+</j:jelly>]]></html>
+        <name>Cisco BCS feedback form 2</name>
+        <processing_script/>
+        <sys_class_name>sys_ui_page</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2020-10-29 11:20:17</sys_created_on>
+        <sys_id>829d459b2f84a410bd2551172799b615</sys_id>
+        <sys_mod_count>35</sys_mod_count>
+        <sys_name>Cisco BCS feedback form 2</sys_name>
+        <sys_package display_value="Cisco BCS Operational Insights" source="x_545898_cisco_bcs">56b8d9362f3310108956ea5ef699b62d</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Cisco BCS Operational Insights">56b8d9362f3310108956ea5ef699b62d</sys_scope>
+        <sys_update_name>sys_ui_page_829d459b2f84a410bd2551172799b615</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2020-10-29 15:21:57</sys_updated_on>
+    </sys_ui_page>
+</record_update>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element label="Cisco Field Notices" max_length="40" name="x_545898_cisco_bcs_cisco_field_notices" sizeclass="2077" type="collection">
+        <element label="Field Notice Device ID" max_length="32" name="deviceid_ref" reference="x_545898_cisco_bcs_cisco_devices" type="reference"/>
+        <element label="Device ID" max_length="255" name="device_id" type="string"/>
+        <element label="Field Notice Bulletin ID" max_length="32" name="fieldnoticeid" reference="x_545898_cisco_bcs_cisco_fn_bulletin" type="reference"/>
+        <element display="true" label="Field Notice ID" max_length="255" name="field_notice_id" type="string"/>
+        <element label="Match Confidence" max_length="500" name="match_confidence" type="string"/>
+        <element label="Match Confidence Reason" max_length="2000" name="match_confidence_reason" type="string"/>
+        <element label="Physical Element ID" max_length="255" name="physical_element_id" type="string"/>
+        <element label="Asset ID" max_length="32" name="physical_element_id_ref" reference="x_545898_cisco_bcs_cisco_assets" type="reference"/>
+        <index name="index">
+            <element name="physical_element_id_ref"/>
+        </index>
+        <index name="index2">
+            <element name="deviceid_ref"/>
+        </index>
+        <index name="index3">
+            <element name="fieldnoticeid"/>
+        </index>
+    </element>
+</database>

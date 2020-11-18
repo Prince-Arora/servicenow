@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="content_block_programmatic">
+    <content_block_programmatic action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <category>general</category>
+        <condition/>
+        <conditional>false</conditional>
+        <frame/>
+        <logged_on>false</logged_on>
+        <name>Vulnerabilities</name>
+        <programmatic_content><![CDATA[<?xml version="1.0" encoding="utf-8" ?>
+<j:jelly trim="false" xmlns:j="jelly:core" xmlns:g="glide" xmlns:j2="null" xmlns:g2="null">
+	<div class="form-group" style="height: 425px; overflow: hidden;">
+	<div class="button-tabs" style="padding-left: 5px; height: 12%;">
+		<ul role="tablist" el-type="li" class="button-group nav nav-segmented accessible-menu">
+			<li id="secNotices-btn" role="tab" onclick="getVulnerabiltyAjax(this.id)" tabindex="0" title="" aria-label="Security Advisories" size="30" class="sw-btn active" data-original-title="">Security Advisories</li>
+			<li id="fnotices-btn" role="tab" onclick="getVulnerabiltyAjax(this.id)" tabindex="0" title="" aria-label="Field Notices" size="30" class="hw-btn" data-original-title="">Field Notices</li>
+		</ul>
+	</div>
+	<div id="vulnerabilities_pie_chart" style="height: 82%;"/>
+	<div id="numLabel" style="position:absolute; left:0px; top:0px;"/>
+	</div>
+<script>
+	$j = jQuery.noConflict();
+	getVulnerabiltyAjax('secNotices-btn');
+	
+	function getVulnerabiltyAjax(selector) {
+	
+	if(selector == "fnotices-btn") {
+	
+	table = "x_545898_cisco_bcs_cisco_field_notices";
+	document.getElementById(selector).classList.add("active");
+	document.getElementById("secNotices-btn").classList.remove("active");
+	}
+	
+	if(selector == "secNotices-btn") {
+	
+	table = "x_545898_cisco_bcs_cisco_security_advisories";
+	document.getElementById(selector).classList.add("active");
+	document.getElementById("fnotices-btn").classList.remove("active");
+	}
+	
+	var ga = new GlideAjax('Cisco_ClientServerBridge');
+	ga.addParam('sysparm_name', 'getVulnerabilityData');
+	ga.addParam('sysparm_tableName', table);
+	ga.getXML(getVulnerabiltyDataResponse);
+	
+	}
+	
+	function getVulnerabiltyDataResponse(response) {
+
+	var answer = response.responseXML.documentElement.getAttribute("answer");
+		var result = JSON.parse(answer);
+	var total = 0 + result[0] + result[1] + result[2];
+	
+	var chart = Highcharts.chart('vulnerabilities_pie_chart', {
+    chart: {
+        plotBackgroundColor: null,
+        plotBorderWidth: null,
+        plotShadow: false,
+        type: 'pie',
+		events: {
+                        click: function () {
+                            location.href = '/ui_page.do?sys_id=5cdbd7ea2f082410bd2551172799b67b';
+                        }
+                    }
+        
+    },
+    title: {
+	text: ''
+},
+    tooltip: {
+        pointFormat: '<b>{point.percentage:.1f}%</b>'
+    },
+    accessibility: {
+        point: {
+            valueSuffix: '%'
+        }
+    },
+    plotOptions: {
+        pie: {
+            allowPointSelect: true,
+	innerSize: "60%",
+            cursor: 'pointer',
+            dataLabels: {
+                enabled: true
+            },
+            showInLegend: false
+        },
+	series: {
+                cursor: 'pointer',
+                point: {
+                    events: {
+                        click: function () {
+                            location.href = '/ui_page.do?sys_id=5cdbd7ea2f082410bd2551172799b67b';
+                        }
+                    }
+                }
+            }
+    },
+	credits: {
+    	enabled: false
+ 	 },
+	exporting: {
+	enabled: false
+  },
+	colors: ['#EDAC41', '#51B8E4','#3379A9', '#F0F0F0'],
+    series: [{
+        colorByPoint: true,
+        data: [{
+            name: 'Vulnerable ['+result[0]+']',
+            y: result[0]
+        }, {
+            name: 'Potentially Vulnerable ['+result[1]+']',
+            y: result[1]
+        }, {
+            name: 'Non Vulnerable ['+result[2]+']',
+            y: result[2]
+        }]/*,
+	dataLabels: {
+                            color:'white',
+                            distance: -35,
+                            formatter: function () {
+                                return this.y;
+
+                            }
+                        }*/
+    }]
+},function(chart) {
+        var textX = chart.plotLeft + (chart.series[0].center[0]);
+        var textY = chart.plotTop  + (chart.series[0].center[1]);
+
+        var span = '<span id="pieChartInfoText" style="position:absolute; text-align:center;">';
+	span += '<span style="font-size: 32px">'+total+'</span><br/>';
+        span += '</span>';
+
+        $j("#numLabel").html(span);
+        span = $j('#pieChartInfoText');
+        span.css('left', textX + (span.width() * -0.5));
+        span.css('top', textY + (span.height() * 1.2));
+	});
+	}
+
+	</script>
+</j:jelly>]]></programmatic_content>
+        <sys_class_name>content_block_programmatic</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2020-11-04 06:51:15</sys_created_on>
+        <sys_id>14898fc12f102010bd2551172799b647</sys_id>
+        <sys_mod_count>104</sys_mod_count>
+        <sys_name>Vulnerabilities</sys_name>
+        <sys_package display_value="Cisco BCS Operational Insights" source="x_545898_cisco_bcs">56b8d9362f3310108956ea5ef699b62d</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Cisco BCS Operational Insights">56b8d9362f3310108956ea5ef699b62d</sys_scope>
+        <sys_update_name>content_block_programmatic_14898fc12f102010bd2551172799b647</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2020-11-11 06:09:46</sys_updated_on>
+        <two_phase>false</two_phase>
+    </content_block_programmatic>
+</record_update>

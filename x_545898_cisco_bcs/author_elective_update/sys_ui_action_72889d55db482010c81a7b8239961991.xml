@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_ui_action">
+    <sys_ui_action action="DELETE">
+        <action_name>Remove Account</action_name>
+        <active>true</active>
+        <client>true</client>
+        <client_script_v2><![CDATA[function onClick(g_form) {
+
+}]]></client_script_v2>
+        <comments/>
+        <condition/>
+        <form_action>true</form_action>
+        <form_button>true</form_button>
+        <form_button_v2>false</form_button_v2>
+        <form_context_menu>false</form_context_menu>
+        <form_link>false</form_link>
+        <form_menu_button_v2>false</form_menu_button_v2>
+        <form_style/>
+        <hint/>
+        <isolate_script>true</isolate_script>
+        <list_action>false</list_action>
+        <list_banner_button>false</list_banner_button>
+        <list_button>false</list_button>
+        <list_choice>false</list_choice>
+        <list_context_menu>false</list_context_menu>
+        <list_link>false</list_link>
+        <list_save_with_form_button>false</list_save_with_form_button>
+        <list_style/>
+        <name>Delete</name>
+        <onclick>onclick()</onclick>
+        <order>200</order>
+        <script><![CDATA[function onclick() {
+    var usrResponse = confirm('Do you want to delete all the inventory?');
+    if (usrResponse == true) {
+        var loadingDialog = new GlideModal("dialog_loading", true);
+        loadingDialog.setTitle('Deleting...');
+        loadingDialog.renderWithContent('<div class="loading-container"><div class="loading-indicator icon-loading icon-lg"></div></div>');
+        var ga = new GlideAjax('Cisco_ClientServerBridge');
+        ga.addParam('sysparm_name', 'gettingDataFromDeleteButton');
+        ga.getXML(parseResponse);
+
+        function parseResponse(response) {
+            var answer = response.responseXML.documentElement.getAttribute("answer");
+            alert("Prince" + answer );
+            if (answer == "true") {
+                alert("Data has been deleted successfully");
+            } else if (answer == "false") {
+                alert("Another Job is running in parllel,please wait for sometime");
+            }
+            new GlideModal().get("dialog_loading").destroy();
+            //             var glideModal = new GlideModal();
+            //             var gmRef = glideModal.get("dialog_loading");
+            //             if (gmRef) {
+            //                 gmRef.destroy();
+            //             }
+        }
+    } else {
+        alert('false');
+        return false;
+    }
+}]]></script>
+        <show_insert>true</show_insert>
+        <show_multiple_update>false</show_multiple_update>
+        <show_query>false</show_query>
+        <show_update>true</show_update>
+        <sys_class_name>sys_ui_action</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2020-10-23 07:00:34</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>72889d55db482010c81a7b8239961991</sys_id>
+        <sys_mod_count>16</sys_mod_count>
+        <sys_name>Delete</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="Cisco BCS Operational Insights" source="x_545898_cisco_bcs">56b8d9362f3310108956ea5ef699b62d</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Cisco BCS Operational Insights">56b8d9362f3310108956ea5ef699b62d</sys_scope>
+        <sys_update_name>sys_ui_action_72889d55db482010c81a7b8239961991</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2020-10-25 14:59:40</sys_updated_on>
+        <table>x_545898_cisco_bcs_configuration</table>
+        <ui11_compatible>true</ui11_compatible>
+        <ui16_compatible>false</ui16_compatible>
+    </sys_ui_action>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Cisco BCS Operational Insights">56b8d9362f3310108956ea5ef699b62d</application>
+        <file_path/>
+        <instance_id>ec6084dddb6bd7c4439ef70fbf96197b</instance_id>
+        <instance_name>dev67149</instance_name>
+        <name>sys_ui_action_72889d55db482010c81a7b8239961991</name>
+        <payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update sys_domain="global" table="sys_ui_action"&gt;&lt;sys_ui_action action="INSERT_OR_UPDATE"&gt;&lt;action_name&gt;Remove Account&lt;/action_name&gt;&lt;active&gt;true&lt;/active&gt;&lt;client&gt;true&lt;/client&gt;&lt;client_script_v2&gt;&lt;![CDATA[function onClick(g_form) {
+
+}]]&gt;&lt;/client_script_v2&gt;&lt;comments/&gt;&lt;condition/&gt;&lt;form_action&gt;true&lt;/form_action&gt;&lt;form_button&gt;true&lt;/form_button&gt;&lt;form_button_v2&gt;false&lt;/form_button_v2&gt;&lt;form_context_menu&gt;false&lt;/form_context_menu&gt;&lt;form_link&gt;false&lt;/form_link&gt;&lt;form_menu_button_v2&gt;false&lt;/form_menu_button_v2&gt;&lt;form_style/&gt;&lt;hint/&gt;&lt;isolate_script&gt;true&lt;/isolate_script&gt;&lt;list_action&gt;false&lt;/list_action&gt;&lt;list_banner_button&gt;false&lt;/list_banner_button&gt;&lt;list_button&gt;false&lt;/list_button&gt;&lt;list_choice&gt;false&lt;/list_choice&gt;&lt;list_context_menu&gt;false&lt;/list_context_menu&gt;&lt;list_link&gt;false&lt;/list_link&gt;&lt;list_save_with_form_button&gt;false&lt;/list_save_with_form_button&gt;&lt;list_style/&gt;&lt;name&gt;Delete&lt;/name&gt;&lt;onclick&gt;onclick()&lt;/onclick&gt;&lt;order&gt;200&lt;/order&gt;&lt;script&gt;&lt;![CDATA[function onclick() {
+    var usrResponse = confirm('Do you want to delete all the inventory?');
+    if (usrResponse == true) {
+        var loadingDialog = new GlideModal("dialog_loading", true);
+        loadingDialog.setTitle('Deleting...');
+        loadingDialog.renderWithContent('&lt;div class="loading-container"&gt;&lt;div class="loading-indicator icon-loading icon-lg"&gt;&lt;/div&gt;&lt;/div&gt;');
+        var ga = new GlideAjax('Cisco_ClientServerBridge');
+        ga.addParam('sysparm_name', 'gettingDataFromDeleteButton');
+        ga.getXML(parseResponse);
+
+        function parseResponse(response) {
+            var answer = response.responseXML.documentElement.getAttribute("answer");
+            alert("Prince" + answer );
+            if (answer == "true") {
+                alert("Data has been deleted successfully");
+            } else if (answer == "false") {
+                alert("Another Job is running in parllel,please wait for sometime");
+            }
+            new GlideModal().get("dialog_loading").destroy();
+            //             var glideModal = new GlideModal();
+            //             var gmRef = glideModal.get("dialog_loading");
+            //             if (gmRef) {
+            //                 gmRef.destroy();
+            //             }
+        }
+    } else {
+        alert('false');
+        return false;
+    }
+}]]&gt;&lt;/script&gt;&lt;show_insert&gt;true&lt;/show_insert&gt;&lt;show_multiple_update&gt;false&lt;/show_multiple_update&gt;&lt;show_query&gt;false&lt;/show_query&gt;&lt;show_update&gt;true&lt;/show_update&gt;&lt;sys_class_name&gt;sys_ui_action&lt;/sys_class_name&gt;&lt;sys_created_by&gt;admin&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2020-10-23 07:00:34&lt;/sys_created_on&gt;&lt;sys_domain&gt;global&lt;/sys_domain&gt;&lt;sys_domain_path&gt;/&lt;/sys_domain_path&gt;&lt;sys_id&gt;72889d55db482010c81a7b8239961991&lt;/sys_id&gt;&lt;sys_mod_count&gt;16&lt;/sys_mod_count&gt;&lt;sys_name&gt;Delete&lt;/sys_name&gt;&lt;sys_overrides/&gt;&lt;sys_package display_value="Cisco BCS Operational Insights" source="x_545898_cisco_bcs"&gt;56b8d9362f3310108956ea5ef699b62d&lt;/sys_package&gt;&lt;sys_policy/&gt;&lt;sys_scope display_value="Cisco BCS Operational Insights"&gt;56b8d9362f3310108956ea5ef699b62d&lt;/sys_scope&gt;&lt;sys_update_name&gt;sys_ui_action_72889d55db482010c81a7b8239961991&lt;/sys_update_name&gt;&lt;sys_updated_by&gt;admin&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2020-10-25 14:59:40&lt;/sys_updated_on&gt;&lt;table&gt;x_545898_cisco_bcs_configuration&lt;/table&gt;&lt;ui11_compatible&gt;true&lt;/ui11_compatible&gt;&lt;ui16_compatible&gt;false&lt;/ui16_compatible&gt;&lt;/sys_ui_action&gt;&lt;/record_update&gt;</payload>
+        <payload_hash>-923575426</payload_hash>
+        <record_name>Delete</record_name>
+        <reverted_from/>
+        <source>5cac71152f002010bd2551172799b688</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2020-10-25 14:59:40</sys_created_on>
+        <sys_id>9489d98e2f80a010bd2551172799b67f</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>1756045ad9f0000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2020-10-25 14:59:40</sys_updated_on>
+        <type>UI Action</type>
+        <update_guid>1089d98e4d80a010de2c8872fe3a417f</update_guid>
+        <update_guid_history>1089d98e4d80a010de2c8872fe3a417f:-923575426,5a29998e1380a01064c7d72c8dda876b:1122382072,1ad8158ea780a0100b26360a7964d441:345209346,1447dd8ead80a010be2c58f9e65885f9:1662468988,2f96198ec480a010f0d0a5bf5d547f7d:1197273821,0c269d0ef080a010a48c193614b03ec4:-414965032,42d5114e3080a0108da56579e7612712:-118380840,9945994e9e80a010a7357cdbc0f01a29:332064091,fad21dcac180a01079766e7f6f9b43bf:921859958,7f3251caee80a01074500688e838f544:393219904,00e119ca2280a010d74361312bbb0a66:1287515766,780111c2cf80a01091087d25c342208b:1767015824,29d974b9e408601048084d86ea098e02:-1066364229,72e734796d086010922fbf7e59d0ee58:-1401794438,d7b370f5350860106f6b7fb82686dc94:1548706658,12bd1559e94820108be3c1a1fc345554:1719562359,3aa81195d0482010f2b2c164a7bd54d5:447193326</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2020-10-25 15:13:57</sys_created_on>
+        <sys_db_object display_value="" name="sys_ui_action">sys_ui_action</sys_db_object>
+        <sys_id>3130c775c5cd43fc921c3e438b364310</sys_id>
+        <sys_metadata>72889d55db482010c81a7b8239961991</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Delete</sys_name>
+        <sys_package display_value="Cisco BCS Operational Insights" source="x_545898_cisco_bcs">56b8d9362f3310108956ea5ef699b62d</sys_package>
+        <sys_parent display_value="Configuration">21daf9b22fb310108956ea5ef699b6e4</sys_parent>
+        <sys_policy/>
+        <sys_scope display_value="Cisco BCS Operational Insights">56b8d9362f3310108956ea5ef699b62d</sys_scope>
+        <sys_scope_delete display_value="">051332bed1934b709318384fcb4b2891</sys_scope_delete>
+        <sys_update_name>sys_ui_action_72889d55db482010c81a7b8239961991</sys_update_name>
+        <sys_update_version display_value="sys_ui_action_72889d55db482010c81a7b8239961991">9489d98e2f80a010bd2551172799b67f</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2020-10-25 15:13:57</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

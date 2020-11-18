@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_ui_page">
+    <sys_ui_page action="INSERT_OR_UPDATE">
+        <category>general</category>
+        <client_script><![CDATA[	$j = jQuery.noConflict();
+
+	$j('#list-iframe').load(function(){
+		$j("#list-iframe").contents().find("a").attr("target","_parent");
+	});
+	software();
+
+function software() {
+
+	var software = new GlideAjax("Cisco_ClientServerBridge");
+	software.addParam('sysparm_name', 'softwareLifecycleDrilldown');
+	software.getXML(SoftwareLifecycleData);
+}
+
+function SoftwareLifecycleData(response) {
+	var answer = response.responseXML.documentElement.getAttribute("answer");
+	var result = JSON.parse(answer);
+	//alert(JSON.stringify(result));
+	var categories = ['Past','0-1y','1-2y','2-3y','3+ years','Not Announced'];
+	var json = {};
+	var count = 0;
+
+	json.categories = categories;
+	var data_array = [];
+	for (var i in result) {
+		data_array.push({
+			name: i ,
+			data: [{ x : count , y : parseInt(result[i]) }]
+		});
+		count++;
+	}
+	alert(JSON.stringify(data_array));
+
+	renderUIScript("container"," ",data_array,"column",json,"Software count");
+}
+function renderUIScript(groupBy,title,data,graphType,json,yAxis) {
+
+	ScriptLoader.getScripts('x_545898_cisco_bcs.Cisco_RenderGraph.jsdbx', function() {
+		x_545898_cisco_bcs.Cisco_RenderGraph.renderBarChart(groupBy,title,data,graphType,json,yAxis);
+	});
+}]]></client_script>
+        <description/>
+        <direct>false</direct>
+        <endpoint>x_545898_cisco_bcs_Software_Lifecycle_DrillDown.do</endpoint>
+        <html><![CDATA[<?xml version="1.0" encoding="utf-8" ?>
+<j:jelly trim="false" xmlns:j="jelly:core" xmlns:g="glide" xmlns:j2="null" xmlns:g2="null">
+	<html>
+		<script src="https://code.highcharts.com/highcharts.js"></script>
+
+		<figure class="highcharts-figure">
+			<div id="container"></div>
+		</figure>
+
+		<h1 class="header"> Software Lifecycle </h1>
+		
+		<div class="milestone-choice">
+			<label> <strong> Select Milestone </strong> </label>
+			<select id="milestone-choice" class="form-control select2-basic" style="max-width:15%;" onChange="milestone()">
+				<option value="milestone-div">Last Date of Support</option>
+			</select>
+		</div>
+		<br />
+
+		<div class="hardware-list" id="hardware-list">
+			<iframe id="list-iframe" src="/x_545898_cisco_bcs_cisco_software_lifecycle_list.do?sysparm_fixed_query" width="100%" height="550" style="border:none;">
+			</iframe>
+		</div>
+
+		<style>
+			<!-- .highcharts-figure, .highcharts-data-table table {
+			min-width: 310px; 
+			max-width: 800px;
+			margin: 1em auto;
+			}
+
+			#container {
+			height: 400px;
+			}
+
+			.highcharts-data-table table {
+			font-family: Verdana, sans-serif;
+			border-collapse: collapse;
+			border: 1px solid #EBEBEB;
+			margin: 10px auto;
+			text-align: center;
+			width: 100%;
+			max-width: 500px;
+			}
+			.highcharts-data-table caption {
+			padding: 1em 0;
+			font-size: 1.2em;
+			color: #555;
+			}
+			.highcharts-data-table th {
+			font-weight: 600;
+			padding: 0.5em;
+			}
+			.highcharts-data-table td, .highcharts-data-table th, .highcharts-data-table caption {
+			padding: 0.5em;
+			}
+			.highcharts-data-table thead tr, .highcharts-data-table tr:nth-child(even) {
+			background: #f8f8f8;
+			}
+			.highcharts-data-table tr:hover {
+			background: #f1f7ff;
+			} -->
+			
+			.header {
+			margin:20px;
+			}
+			.milestone-choice {
+			margin:20px;
+			}
+			.hardware-list {
+			margin-top:50px;
+			<!-- margin-left:20px;
+   margin-right:20px; -->
+			}
+			.highcharts-figure {
+			width:60%;
+			float:right;
+			margin-top:20px;
+			}
+		</style>
+	</html>
+
+</j:jelly>]]></html>
+        <name>Software_Lifecycle_DrillDown</name>
+        <processing_script/>
+        <sys_class_name>sys_ui_page</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2020-10-28 12:39:14</sys_created_on>
+        <sys_id>89065c832f046410bd2551172799b649</sys_id>
+        <sys_mod_count>53</sys_mod_count>
+        <sys_name>Software_Lifecycle_DrillDown</sys_name>
+        <sys_package display_value="Cisco BCS Operational Insights" source="x_545898_cisco_bcs">56b8d9362f3310108956ea5ef699b62d</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Cisco BCS Operational Insights">56b8d9362f3310108956ea5ef699b62d</sys_scope>
+        <sys_update_name>sys_ui_page_89065c832f046410bd2551172799b649</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2020-11-18 07:05:59</sys_updated_on>
+    </sys_ui_page>
+</record_update>

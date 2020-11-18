@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="content_block_programmatic">
+    <content_block_programmatic action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <category>general</category>
+        <condition/>
+        <conditional>false</conditional>
+        <frame/>
+        <logged_on>false</logged_on>
+        <name>Asset Overview</name>
+        <programmatic_content><![CDATA[<?xml version="1.0" encoding="utf-8" ?>
+<j:jelly trim="false" xmlns:j="jelly:core" xmlns:g="glide" xmlns:j2="null" xmlns:g2="null">
+	<div class="form-group" style="height: 425px; overflow: hidden;"  onclick="location.href='/x_545898_cisco_bcs_Asset_Drilldown.do'" >
+		<div id="asset_count" style="padding-left: 4%; padding-bottom: 2%; height: 30%"></div>
+		<div id="asset_overview" style="height: 69%;"></div>
+		<div style="height: 1%;"/>
+	</div>
+	<script>
+		var ga = new GlideAjax('Cisco_ClientServerBridge');
+		ga.addParam('sysparm_name', 'getAssets');
+		ga.getXML(getAssetResponse);
+
+		function getAssetResponse(response) {
+
+		var answer = response.responseXML.documentElement.getAttribute("answer");
+		var result = JSON.parse(answer);
+		
+
+		$j("#asset_count").html('<h1>'+result[0]+'</h1>'+'<b>Collected Assets</b> ');
+
+
+		Highcharts.setOptions({
+		lang: {
+		thousandsSep: ""
+		}
+		})
+
+		var chart = Highcharts.chart('asset_overview', {
+		chart: {
+		type: 'bar',
+		events: {
+		click: function () {
+		location.href = '/x_545898_cisco_bcs_Asset_Drilldown.do';
+		}
+		}
+		},
+		title: {
+
+		text: ''
+		},
+		credits: {
+		enabled: false
+		},
+		exporting: {
+		enabled: false
+		},
+		xAxis: {
+		text: 'Vulnerabilities'/*,
+		visible: false*/
+		},
+		yAxis: {
+		min: 0,
+		title: {
+		text: ''
+		}/*,
+		visible: false*/
+		},
+		tooltip: {
+		headerFormat: '<span style="font-size:10px"></span><table>',
+		pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
+		'<td style="padding:0"><b>{point.y:0f} </b></td></tr>',
+		footerFormat: '</table>',
+		shared: true,
+		useHTML: true
+		},
+		plotOptions: {
+		series: {
+		dataLabels: {
+		enabled: true,
+		align: 'right',
+		color: '#FFFFFF',
+		x: -10
+		},
+		pointPadding: 0.1,
+		groupPadding: 0,
+		pointWidth: 25
+		}
+		},
+		series: [{
+		showInLegend: false, 
+		name: 'Collected Assets',
+		data: [result[1]],
+		color: '#1E4E71'
+		}]
+
+		});
+		chart.reflow();
+		}
+
+
+	</script>
+</j:jelly>]]></programmatic_content>
+        <sys_class_name>content_block_programmatic</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2020-10-28 08:31:20</sys_created_on>
+        <sys_id>b52ddffe2f406410bd2551172799b672</sys_id>
+        <sys_mod_count>71</sys_mod_count>
+        <sys_name>Asset Overview</sys_name>
+        <sys_package display_value="Cisco BCS Operational Insights" source="x_545898_cisco_bcs">56b8d9362f3310108956ea5ef699b62d</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Cisco BCS Operational Insights">56b8d9362f3310108956ea5ef699b62d</sys_scope>
+        <sys_update_name>content_block_programmatic_b52ddffe2f406410bd2551172799b672</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2020-11-18 05:52:59</sys_updated_on>
+        <two_phase>false</two_phase>
+    </content_block_programmatic>
+</record_update>

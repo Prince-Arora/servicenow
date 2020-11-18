@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="content_block_programmatic">
+    <content_block_programmatic action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <category>general</category>
+        <condition/>
+        <conditional>false</conditional>
+        <frame/>
+        <logged_on>false</logged_on>
+        <name>practice_widget_assets</name>
+        <programmatic_content><![CDATA[<?xml version="1.0" encoding="utf-8" ?>
+<j:jelly trim="false" xmlns:j="jelly:core" xmlns:g="glide" xmlns:j2="null" xmlns:g2="null">
+	<div class="form-group">
+		<div id="asset_count" style="padding-left: 4%; padding-bottom: 2%;"></div>
+		<div id="asset_overview"></div>
+	</div>
+   <script>
+ 	var ga = new GlideAjax('Cisco_ClientServerBridge');
+	ga.addParam('sysparm_name', 'getAssets');
+	ga.getXML(getAssetResponse);
+	   
+	function getAssetResponse(response) {
+	   
+  		var answer = response.responseXML.documentElement.getAttribute("answer");
+	  	var result = JSON.parse(answer);
+	   
+	   $j("#asset_count").html('<h1>'+result[0]+'</h1>'+'<b>Collected Assets</b> ');
+	    
+	  	var chart =Highcharts.chart('asset_overview', {
+   		 chart: {
+        type: 'bar'
+   		 },
+    	title: {
+	  
+        text: ''
+    	},
+	   credits: {
+    	enabled: false
+ 	 },
+   		 xAxis: {
+     	 text: 'Vulnerabilities',
+	   visible: false
+    },
+    yAxis: {
+        min: 0,
+        title: {
+        	text: ''
+        },
+	   visible: false
+    },
+    tooltip: {
+        pointFormat: '<span style="color:{series.color}">{series.name}</span>: <b>{point.y}</b> ({point.percentage:.0f}%)<br/>',
+        shared: true,
+
+        useHTML: true
+    },
+      plotOptions: {
+        series: {
+	     dataLabels: {
+                enabled: true/*,
+                align: 'right',
+                color: '#FFFFFF',
+                x: +2010*/
+            },
+	     pointPadding: 0.1,
+            groupPadding: 0,
+            pointWidth: 25,
+stacking: 'percent'
+        }
+    },
+    series: [{
+	   showInLegend: false, 
+        name: 'Assets',
+        data: [result[0]],
+	   color: '#F0F0F0'
+    },{
+	   showInLegend: false, 
+        name: 'Collected Assets',
+        data: [result[1]],
+	   color: '#1E4E71'
+    }
+]
+	   
+});
+	   chart.reflow();
+	   }
+	   
+	   
+	</script>
+</j:jelly>]]></programmatic_content>
+        <sys_class_name>content_block_programmatic</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2020-10-30 12:50:26</sys_created_on>
+        <sys_id>26cb2ae72f44e410bd2551172799b60e</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name>practice_widget_assets</sys_name>
+        <sys_package display_value="Cisco BCS Operational Insights" source="x_545898_cisco_bcs">56b8d9362f3310108956ea5ef699b62d</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Cisco BCS Operational Insights">56b8d9362f3310108956ea5ef699b62d</sys_scope>
+        <sys_update_name>content_block_programmatic_26cb2ae72f44e410bd2551172799b60e</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2020-10-30 12:52:23</sys_updated_on>
+        <two_phase>false</two_phase>
+    </content_block_programmatic>
+</record_update>

@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_ui_page">
+    <sys_ui_page action="INSERT_OR_UPDATE">
+        <category>general</category>
+        <client_script/>
+        <description/>
+        <direct>false</direct>
+        <endpoint>x_545898_cisco_bcs_Feedback on link.do</endpoint>
+        <html><![CDATA[<?xml version="1.0" encoding="utf-8" ?>
+<j:jelly trim="false" xmlns:j="jelly:core" xmlns:g="glide" xmlns:j2="null" xmlns:g2="null">
+	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet"/>	
+	
+	<div class="stars" id="Prince">
+
+    <input class="star star-5" id="star-5" type="radio" name="star" value="5"  />
+    <label class="star star-5" for="star-5"></label> 
+    <input class="star star-4" id="star-4" type="radio" name="star"  value="4"/>
+    <label class="star star-4" for="star-4"></label>
+    <input class="star star-3" id="star-3" type="radio" name="star"  value="3"/>
+    <label class="star star-3" for="star-3"></label>
+    <input class="star star-2" id="star-2" type="radio" name="star"  value="2"/>
+
+    <label class="star star-2" for="star-2"></label>
+
+    <input class="star star-1" id="star-1" type="radio" name="star"  value="1"/>
+
+    <label class="star star-1" for="star-1"></label>
+</div>
+	<style>
+	div.stars {
+
+  width: 270px;
+
+  display: inline-block;
+
+}
+	#submit{
+	float:right;
+	}
+
+ 
+
+input.star { display: none; }
+
+ 
+
+label.star {
+
+  float: right;
+
+  padding: 10px;
+
+  font-size: 36px;
+
+  color: #444;
+
+  transition: all .2s;
+
+}
+
+ .head{
+  font-size: 2em;
+}
+
+input.star:checked ~ label.star:before {
+
+  content: '\f005';
+
+  color: #FD4;
+
+  transition: all .25s;
+
+}
+
+ 
+input.star-5:checked ~ label.star:before {
+
+  color: #FE7;
+
+  text-shadow: 0 0 20px #952;
+
+}
+#feedback{
+		padding-left:20px;
+		padding-top:15px;
+		}
+ 
+
+input.star-1:checked ~ label.star:before { color: #F62; }
+
+ 
+
+label.star:hover { transform: rotate(-15deg) scale(1.3); }
+
+ 
+
+label.star:before {
+
+  content: '\f006';
+
+  font-family: FontAwesome;
+
+}
+	</style>
+	
+</j:jelly>]]></html>
+        <name>Feedback on link</name>
+        <processing_script/>
+        <sys_class_name>sys_ui_page</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2020-11-10 10:09:54</sys_created_on>
+        <sys_id>0360368f2fd06010bd2551172799b633</sys_id>
+        <sys_mod_count>7</sys_mod_count>
+        <sys_name>Feedback on link</sys_name>
+        <sys_package display_value="Cisco BCS Operational Insights" source="x_545898_cisco_bcs">56b8d9362f3310108956ea5ef699b62d</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Cisco BCS Operational Insights">56b8d9362f3310108956ea5ef699b62d</sys_scope>
+        <sys_update_name>sys_ui_page_0360368f2fd06010bd2551172799b633</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2020-11-10 14:48:41</sys_updated_on>
+    </sys_ui_page>
+</record_update>

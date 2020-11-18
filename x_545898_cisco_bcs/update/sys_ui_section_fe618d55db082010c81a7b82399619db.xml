@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+    <sys_ui_section caption="" section_id="fe618d55db082010c81a7b82399619db" sys_domain="global" table="x_545898_cisco_bcs_cisco_software_lifecycle" version="3" view="">
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>device_name</element>
+            <position>0</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2020-10-23 05:19:00</sys_created_on>
+            <sys_id>07618d55db082010c81a7b82399619e2</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_545898_cisco_bcs_cisco_software_lifecycle" sys_domain="global" view="Default view">fe618d55db082010c81a7b82399619db</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2020-10-23 05:19:00</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>current_milestone_date</element>
+            <position>1</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2020-10-23 05:19:00</sys_created_on>
+            <sys_id>87618d55db082010c81a7b82399619e2</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_545898_cisco_bcs_cisco_software_lifecycle" sys_domain="global" view="Default view">fe618d55db082010c81a7b82399619db</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2020-10-23 05:19:00</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>next_milestone</element>
+            <position>2</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2020-10-23 05:19:00</sys_created_on>
+            <sys_id>0b618d55db082010c81a7b82399619e2</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_545898_cisco_bcs_cisco_software_lifecycle" sys_domain="global" view="Default view">fe618d55db082010c81a7b82399619db</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2020-10-23 05:19:00</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>device_id</element>
+            <position>3</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2020-10-23 05:19:00</sys_created_on>
+            <sys_id>8b618d55db082010c81a7b82399619e2</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_545898_cisco_bcs_cisco_software_lifecycle" sys_domain="global" view="Default view">fe618d55db082010c81a7b82399619db</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2020-10-23 05:19:00</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>current_milestone</element>
+            <position>4</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2020-10-23 05:19:00</sys_created_on>
+            <sys_id>0f618d55db082010c81a7b82399619e2</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_545898_cisco_bcs_cisco_software_lifecycle" sys_domain="global" view="Default view">fe618d55db082010c81a7b82399619db</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2020-10-23 05:19:00</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>sw_version</element>
+            <position>5</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2020-10-23 05:19:00</sys_created_on>
+            <sys_id>8f618d55db082010c81a7b82399619e2</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_545898_cisco_bcs_cisco_software_lifecycle" sys_domain="global" view="Default view">fe618d55db082010c81a7b82399619db</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2020-10-23 05:19:00</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>sw_id</element>
+            <position>6</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2020-10-23 05:19:00</sys_created_on>
+            <sys_id>03618d55db082010c81a7b82399619e3</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_545898_cisco_bcs_cisco_software_lifecycle" sys_domain="global" view="Default view">fe618d55db082010c81a7b82399619db</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2020-10-23 05:19:00</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>sw_type</element>
+            <position>7</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2020-10-23 05:19:00</sys_created_on>
+            <sys_id>83618d55db082010c81a7b82399619e3</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_545898_cisco_bcs_cisco_software_lifecycle" sys_domain="global" view="Default view">fe618d55db082010c81a7b82399619db</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2020-10-23 05:19:00</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>next_milestone_date</element>
+            <position>8</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2020-10-23 05:19:00</sys_created_on>
+            <sys_id>07618d55db082010c81a7b82399619e3</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_545898_cisco_bcs_cisco_software_lifecycle" sys_domain="global" view="Default view">fe618d55db082010c81a7b82399619db</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2020-10-23 05:19:00</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>device_id_ref</element>
+            <position>9</position>
+            <sys_created_by>harsh.gupta</sys_created_by>
+            <sys_created_on>2020-11-03 09:05:12</sys_created_on>
+            <sys_id>67ae9670db5ce010f61cb298f4961925</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_545898_cisco_bcs_cisco_software_lifecycle" sys_domain="global" view="Default view">fe618d55db082010c81a7b82399619db</sys_ui_section>
+            <sys_updated_by>harsh.gupta</sys_updated_by>
+            <sys_updated_on>2020-11-03 09:05:12</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>sw_id_ref</element>
+            <position>10</position>
+            <sys_created_by>harsh.gupta</sys_created_by>
+            <sys_created_on>2020-11-03 09:05:12</sys_created_on>
+            <sys_id>3fae1a70db5ce010f61cb298f496195e</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_545898_cisco_bcs_cisco_software_lifecycle" sys_domain="global" view="Default view">fe618d55db082010c81a7b82399619db</sys_ui_section>
+            <sys_updated_by>harsh.gupta</sys_updated_by>
+            <sys_updated_on>2020-11-03 09:05:12</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>devices</element>
+            <position>11</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2020-11-11 07:42:41</sys_created_on>
+            <sys_id>058813572f50a010bd2551172799b60e</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_545898_cisco_bcs_cisco_software_lifecycle" sys_domain="global" view="Default view">fe618d55db082010c81a7b82399619db</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2020-11-11 07:42:41</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_section action="INSERT_OR_UPDATE">
+            <caption/>
+            <header>false</header>
+            <name>x_545898_cisco_bcs_cisco_software_lifecycle</name>
+            <roles/>
+            <sys_class_name>sys_ui_section</sys_class_name>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2020-10-23 05:19:00</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>fe618d55db082010c81a7b82399619db</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>x_545898_cisco_bcs_cisco_software_lifecycle</sys_name>
+            <sys_overrides/>
+            <sys_package display_value="Cisco BCS Operational Insights" source="x_545898_cisco_bcs">56b8d9362f3310108956ea5ef699b62d</sys_package>
+            <sys_policy/>
+            <sys_scope display_value="Cisco BCS Operational Insights">56b8d9362f3310108956ea5ef699b62d</sys_scope>
+            <sys_update_name>sys_ui_section_fe618d55db082010c81a7b82399619db</sys_update_name>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2020-10-23 05:19:00</sys_updated_on>
+            <sys_user/>
+            <title>true</title>
+            <view display_value="Default view" name="NULL">Default view</view>
+            <view_name/>
+        </sys_ui_section>
+    </sys_ui_section>
+</record_update>
