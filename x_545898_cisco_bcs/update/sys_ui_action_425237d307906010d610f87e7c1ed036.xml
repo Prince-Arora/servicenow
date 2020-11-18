@@ -29,7 +29,10 @@
         <onclick>exportList()</onclick>
         <order>110</order>
         <script><![CDATA[function exportList() { 
+	
 	g_navigation.openPopup("/x_545898_cisco_bcs_cisco_security_advisories_bulletins_list.do?XLSX","_parent");
+	
+	
 }]]></script>
         <show_insert>true</show_insert>
         <show_multiple_update>false</show_multiple_update>
@@ -41,7 +44,7 @@
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>425237d307906010d610f87e7c1ed036</sys_id>
-        <sys_mod_count>1</sys_mod_count>
+        <sys_mod_count>2</sys_mod_count>
         <sys_name>Export</sys_name>
         <sys_overrides/>
         <sys_package display_value="Cisco BCS Operational Insights" source="x_545898_cisco_bcs">56b8d9362f3310108956ea5ef699b62d</sys_package>
@@ -49,7 +52,7 @@
         <sys_scope display_value="Cisco BCS Operational Insights">56b8d9362f3310108956ea5ef699b62d</sys_scope>
         <sys_update_name>sys_ui_action_425237d307906010d610f87e7c1ed036</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2020-11-11 10:01:46</sys_updated_on>
+        <sys_updated_on>2020-11-18 09:40:09</sys_updated_on>
         <table>x_545898_cisco_bcs_cisco_security_advisories_bulletins</table>
         <ui11_compatible>true</ui11_compatible>
         <ui16_compatible>false</ui16_compatible>
